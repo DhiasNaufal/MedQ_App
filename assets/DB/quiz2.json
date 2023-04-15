@@ -1,0 +1,124 @@
+{
+    "id": "pkt002",
+    "title": "Pengenalan CDSS",
+    "image_url": "",
+    "Description": "Soal pengetahuan CDSS secara umum",
+    "time_seconds": 900,
+    "questions": [
+        {
+            "id": "pkt002q001",
+            "question": "Apa itu Clinical Decision Support System (CDSS)?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Sistem untuk mengatur jadwal dokter dan perawat."
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Sistem untuk menyimpan catatan medis pasien."
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Sistem untuk membantu dokter dan profesional kesehatan dalam pengambilan keputusan klinis yang lebih baik."
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Sistem untuk menghubungi Dokter"
+                }
+            ],
+            "correct_answer": "C"
+        },
+        {
+            "id": "pkt002q002",
+            "question": "Apa yang menjadi komponen utama dari CDSS?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Basis Data Pasien, Mesin Inferensi, dan Antarmuka Pengguna."
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Antarmuka Pengguna, Basis Pengetahuan, dan Modul Komunikasi."
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Antar Muka, Mesin Inferensi, User Experience"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Basis Pengetahuan, Mesin Inferensi, dan Basis Data Pasien."
+                }
+            ],
+            "correct_answer": "D"
+        },
+        {
+            "id": "pkt002q003",
+            "question": "Apa manfaat dari penerapan CDSS di rumah sakit atau klinik",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Meningkatkan pendapatan rumah sakit atau klinik."
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Meningkatkan efisiensi dan kualitas perawatan pasien, mengurangi risiko kesalahan klinis, dan memperbaiki penggunaan obat yang lebih tepat."
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Menurunkan biaya perawatan pasien."
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Meningkatkan kepercayaan dokter"
+                }
+            ],
+            "correct_answer": "B"
+        },
+        {
+            "id": "pkt002q004",
+            "question": "Apa fungsi Mesin Inferensi pada CDSS?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Memberikan rekomendasi klinis yang tepat dan sesuai dengan kondisi pasien."
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Menyimpan data medis pasien."
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Mengatur jadwal dokter dan perawat."
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Menghubungi Dokter"
+                }
+            ],
+            "correct_answer": "A"
+        },
+        {
+            "id": "pkt002q005",
+            "question": "Apa yang dimaksud dengan Basis Pengetahuan pada CDSS?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Database Penyakit yang dimiliki dokter"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Data medis pasien seperti riwayat kesehatan, hasil tes laboratorium, diagnosis, pengobatan yang diberikan, dan lain-lain."
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Antarmuka yang memungkinkan dokter dan profesional kesehatan untuk berinteraksi dengan sistem CDSS."
+                },
+                {
+                    "identifier": "D",
+                    "Answer": " Informasi medis, aturan klinis, panduan pengobatan, protokol dan kebijakan medis, dan lain-lain."
+                }
+            ],
+            "correct_answer": "D"
+        }
+    ]
+}

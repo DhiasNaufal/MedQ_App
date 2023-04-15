@@ -1,0 +1,124 @@
+{
+    "id": "pkt001",
+    "title": "Decision Support System",
+    "image_url": "",
+    "Description": "Pengetahuan Umum Mengenai Decision Support System (DSS)",
+    "time_seconds": 900,
+    "questions": [
+        {
+            "id": "pkt001q001",
+            "question": "Apa itu DSS?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Data Storage System"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Decision Support System"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Digital Security System"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Data Science System"
+                }
+            ],
+            "correct_answer": "B"
+        },
+        {
+            "id": "pkt001q002",
+            "question": "Fungsi utama DSS adalah untuk:",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Membuat keputusan secara otomatis"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Membantu pengambilan keputusan"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Mengolah data mentah"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Menyimpan data dalam jumlah besar"
+                }
+            ],
+            "correct_answer": "B"
+        },
+        {
+            "id": "pkt001q003",
+            "question": "Tahapan dalam proses pengambilan keputusan dengan DSS adalah:",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Tahapan dalam proses pengambilan keputusan dengan DSS adalah:"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Identifikasi masalah, evaluasi solusi, pemilihan solusi"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Pemilihan solusi, evaluasi solusi, identifikasi masalah"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Evaluasi solusi, pemilihan solusi, identifikasi masalah"
+                }
+            ],
+            "correct_answer": "A"
+        },
+        {
+            "id": "pkt001q004",
+            "question": "Jenis-jenis DSS antara lain:",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Model-driven DSS, data-driven DSS, dan knowledge-driven DSS"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Data mining DSS, model-driven DSS, dan artificial intelligence DSS"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Knowledge-driven DSS, artificial intelligence DSS, dan expert system DSS"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Data warehouse DSS, data-driven DSS, dan artificial intelligence DSS"
+                }
+            ],
+            "correct_answer": "A"
+        },
+        {
+            "id": "pkt001q005",
+            "question": "Apa manfaat dari penggunaan DSS?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Meningkatkan kecepatan pengambilan keputusan"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Mengurangi biaya operasional perusahaan"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Meningkatkan kualitas keputusan"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Semua jawaban benar"
+                }
+            ],
+            "correct_answer": "D"
+        }
+    ]
+}

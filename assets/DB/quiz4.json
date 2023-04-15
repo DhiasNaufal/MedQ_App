@@ -1,0 +1,124 @@
+{
+    "id": "pkt004",
+    "title": "Medical Diagnostic Test",
+    "image_url": "",
+    "Description": "Soal pengetahuan Medical Diagnostic Test",
+    "time_seconds": 900,
+    "questions": [
+        {
+            "id": "pkt003q001",
+            "question": "Apa itu Medical Diagnostic Test?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Tes yang digunakan untuk mengukur tekanan darah"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Tes yang digunakan untuk mendeteksi adanya penyakit pada tubuh"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Tes yang digunakan untuk mengukur kadar gula darah"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": " Tes yang digunakan untuk mengukur tingkat kolesterol"
+                }
+            ],
+            "correct_answer": "B"
+        },
+        {
+            "id": "pkt003q002",
+            "question": "manakah dari pernyataan berikut yang SALAH mengenai elemen dasar Medical Data",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "reference to the patient"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "reference to the parameter being observed or measured"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "value of the parameter"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "reference to the user diet"
+                }
+            ],
+            "correct_answer": "D"
+        },
+        {
+            "id": "pkt003q003",
+            "question": "Apa kegunaan utama dari Medical Data",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "rekam tindakan profilaksis (pencegahan) standar"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Dapat digunakan dalam komunikasi antara penyedia layanan kesehatan"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "membentuk dasar untuk prognosis (memprediksi) masalah kesehatan di masa depan"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Semua Jawaban Benar"
+                }
+            ],
+            "correct_answer": "D"
+        },
+        {
+            "id": "pkt003q004",
+            "question": "Apa pengertian dari Invasive Diagnostic Testing",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Proses diagnosa yang melibatkan menusuk kulit atau memasuki tubuh."
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Proses diagnosa yang melibatkan beberapa Dokter"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Proses diagnosa yang melibatkan AI dalam proses diagnosa"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Proses diagnosa yang melibatkan CT Scan"
+                }
+            ],
+            "correct_answer": "A"
+        },
+        {
+            "id": "pkt003q005",
+            "question": "Apa sajakah yang termasuk ke dalam Diagnostic Testing?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Pathology Testing dan Medical Imaging"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Diet testing dan Onthology Testing"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Mental Testing dan physic Testing"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Stamina Testing dan Brain Testing"
+                }
+            ],
+            "correct_answer": "A"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "359795794071",
+    "project_id": "cdss-quiz",
+    "storage_bucket": "cdss-quiz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359795794071:android:34695bf449dfb81c2d49d2",
+        "android_client_info": {
+          "package_name": "com.example.cdss_quiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "359795794071-u2tlvkl8k05s08ubum79sji28lje04iv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmEgUnITSmoDYcE1442a0BwnkMFBYrcHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "359795794071-u2tlvkl8k05s08ubum79sji28lje04iv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
