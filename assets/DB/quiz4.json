@@ -1,124 +1,124 @@
 {
     "id": "pkt004",
-    "title": "Medical Diagnostic Test",
+    "title": "Electronic Health Record",
     "image_url": "",
     "Description": "Soal pengetahuan Medical Diagnostic Test",
     "time_seconds": 900,
     "questions": [
         {
-            "id": "pkt003q001",
-            "question": "Apa itu Medical Diagnostic Test?",
+            "id": "pkt004q001",
+            "question": "Apa tujuan dari EHR?",
             "answers": [
                 {
                     "identifier": "A",
-                    "Answer": "Tes yang digunakan untuk mengukur tekanan darah"
+                    "Answer": " Untuk membuat jaringan sosial online bagi penyedia layanan kesehatan"
                 },
                 {
                     "identifier": "B",
-                    "Answer": "Tes yang digunakan untuk mendeteksi adanya penyakit pada tubuh"
+                    "Answer": "Untuk mengumpulkan, menyimpan, dan mengelola informasi kesehatan pasien"
                 },
                 {
                     "identifier": "C",
-                    "Answer": "Tes yang digunakan untuk mengukur kadar gula darah"
+                    "Answer": "Untuk melacak tingkat kebugaran fisik pasien"
                 },
                 {
                     "identifier": "D",
-                    "Answer": " Tes yang digunakan untuk mengukur tingkat kolesterol"
+                    "Answer": "  Untuk membuat sistem resep elektronik"
                 }
             ],
             "correct_answer": "B"
         },
         {
-            "id": "pkt003q002",
-            "question": "manakah dari pernyataan berikut yang SALAH mengenai elemen dasar Medical Data",
+            "id": "pkt004q002",
+            "question": "Fitur paling penting dari EHR adalah?",
             "answers": [
                 {
                     "identifier": "A",
-                    "Answer": "reference to the patient"
+                    "Answer": "Antarmuka pengguna yang berwarna-warni"
                 },
                 {
                     "identifier": "B",
-                    "Answer": "reference to the parameter being observed or measured"
+                    "Answer": "Kemampuan untuk mencatat demografi pasien"
                 },
                 {
                     "identifier": "C",
-                    "Answer": "value of the parameter"
+                    "Answer": "Integrasi dengan aplikasi pihak ketiga"
                 },
                 {
                     "identifier": "D",
-                    "Answer": "reference to the user diet"
+                    "Answer": "Penjadwalan janji otomatis"
                 }
             ],
             "correct_answer": "D"
         },
         {
-            "id": "pkt003q003",
-            "question": "Apa kegunaan utama dari Medical Data",
+            "id": "pkt004q003",
+            "question": "Yang mana dari berikut bukan merupakan manfaat menggunakan EHR?",
             "answers": [
                 {
                     "identifier": "A",
-                    "Answer": "rekam tindakan profilaksis (pencegahan) standar"
+                    "Answer": "Peningkatan perawatan dan keamanan pasien"
                 },
                 {
                     "identifier": "B",
-                    "Answer": "Dapat digunakan dalam komunikasi antara penyedia layanan kesehatan"
+                    "Answer": "Diagnosis dan pengobatan yang lebih akurat"
                 },
                 {
                     "identifier": "C",
-                    "Answer": "membentuk dasar untuk prognosis (memprediksi) masalah kesehatan di masa depan"
+                    "Answer": "Peningkatan waktu tunggu pasien"
                 },
                 {
                     "identifier": "D",
-                    "Answer": "Semua Jawaban Benar"
+                    "Answer": "Komunikasi yang lebih baik antara penyedia layanan kesehatan"
+                }
+            ],
+            "correct_answer": "C"
+        },
+        {
+            "id": "pkt004q004",
+            "question": "Tantangan utama apa yang terkait dengan implementasi EHR?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Biaya implementasi yang tinggi"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Kesulitan dalam mencari staf yang berkualifikasi untuk mengelola EHR"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Kapasitas penyimpanan yang terbatas"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Akses terbatas ke internet"
+                }
+            ],
+            "correct_answer": "A"
+        },
+        {
+            "id": "pkt004q005",
+            "question": "Badan pemerintah mana di Amerika Serikat yang bertanggung jawab untuk mempromosikan adopsi dan penggunaan EHR yang bermakna?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": " Institut Kesehatan Nasional (NIH)"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": " Administrasi Makanan dan Obat-obatan (FDA)"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Pusat Pengendalian dan Pencegahan Penyakit (CDC)"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Kementerian Kesehatan Republik Indonesia (Kemenkes RI)"
                 }
             ],
             "correct_answer": "D"
-        },
-        {
-            "id": "pkt003q004",
-            "question": "Apa pengertian dari Invasive Diagnostic Testing",
-            "answers": [
-                {
-                    "identifier": "A",
-                    "Answer": "Proses diagnosa yang melibatkan menusuk kulit atau memasuki tubuh."
-                },
-                {
-                    "identifier": "B",
-                    "Answer": "Proses diagnosa yang melibatkan beberapa Dokter"
-                },
-                {
-                    "identifier": "C",
-                    "Answer": "Proses diagnosa yang melibatkan AI dalam proses diagnosa"
-                },
-                {
-                    "identifier": "D",
-                    "Answer": "Proses diagnosa yang melibatkan CT Scan"
-                }
-            ],
-            "correct_answer": "A"
-        },
-        {
-            "id": "pkt003q005",
-            "question": "Apa sajakah yang termasuk ke dalam Diagnostic Testing?",
-            "answers": [
-                {
-                    "identifier": "A",
-                    "Answer": "Pathology Testing dan Medical Imaging"
-                },
-                {
-                    "identifier": "B",
-                    "Answer": "Diet testing dan Onthology Testing"
-                },
-                {
-                    "identifier": "C",
-                    "Answer": "Mental Testing dan physic Testing"
-                },
-                {
-                    "identifier": "D",
-                    "Answer": "Stamina Testing dan Brain Testing"
-                }
-            ],
-            "correct_answer": "A"
         }
     ]
 }

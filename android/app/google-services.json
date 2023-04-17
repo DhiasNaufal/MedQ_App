@@ -29,6 +29,13 @@
             {
               "client_id": "359795794071-u2tlvkl8k05s08ubum79sji28lje04iv.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "359795794071-rveqlo6e7kjeoa8vkea1aldu0qlc8fkl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cdssQuiz"
+              }
             }
           ]
         }

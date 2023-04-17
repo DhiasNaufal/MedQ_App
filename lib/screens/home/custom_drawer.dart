@@ -9,6 +9,7 @@ class CustomDrawer extends GetView<MyDrawerController> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.maxFinite,
       decoration: BoxDecoration(gradient: mainGradient(context)),
       padding: UIParameters.screenPadding,
       child: Theme(
@@ -19,11 +20,15 @@ class CustomDrawer extends GetView<MyDrawerController> {
         child: SafeArea(
             child: Stack(
           children: [
-            BackButton(
-              onPressed: (() {
-                controller.toggleDrawer();
-              }),
-            )
+            Positioned(
+                top: 0,
+                right: 0,
+                child: BackButton(
+                  color: kOnSurfaceTextColor,
+                  onPressed: () {
+                    controller.toggleDrawer();
+                  },
+                )),
           ],
         )),
       ),
