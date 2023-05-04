@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:cdss_quiz/configs/configs.dart';
 import 'package:cdss_quiz/controllers/common/drawer_controller.dart';
 import 'package:cdss_quiz/controllers/controllers.dart';
@@ -28,7 +30,8 @@ class HomeScreen extends GetView<MyDrawerController> {
           backgroundColor: Colors.white.withOpacity(0.5),
           slideWidth: MediaQuery.of(context).size.width * 0.6,
           mainScreen: Container(
-            decoration: BoxDecoration(gradient: mainGradient(context)),
+            decoration: BoxDecoration(
+                color: Colors.white), //gradient: mainGradient(context)),
             child: SafeArea(
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,41 +45,85 @@ class HomeScreen extends GetView<MyDrawerController> {
                             offset: const Offset(-10, 0),
                             child: CircularButton(
                               onTap: controller.toggleDrawer,
-                              child: const Icon(AppIcons.menuleft),
+                              child: const Icon(
+                                AppIcons.menuleft,
+                                color: Colors.black,
+                              ),
                             ),
                           ),
                           SizedBox(height: 10),
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 10,
+                            ),
                             child: Row(
                               children: [
-                                const Icon(AppIcons.peace),
-                                // Builder(
-                                //   builder: (_) {
-                                //     final AuthController _auth = Get.find();
-                                //     final user = _auth.getUser();
-                                //     String _label = '  Hello mate';
-                                //     if (user != null) {
-                                //       _label = '  Hello ${user.displayName}';
-                                //     }
-                                //     return Text(_label,
-                                //         style: kDetailsTS.copyWith(
-                                //             color: kOnSurfaceTextColor));
-                                //   },
-                                // ),
+                                //const Icon(AppIcons.peace),
+                                Builder(
+                                  builder: (_) {
+                                    final AuthController _auth = Get.find();
+                                    final user = _auth.getUser();
+                                    String _label = 'Mate';
+                                    if (user != null) {
+                                      _label = '${user.displayName}';
+                                    }
+                                    return Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Hello,",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 35,
+                                              fontWeight: FontWeight.w100),
+                                        ),
+                                        SizedBox(
+                                          height: 4,
+                                        ),
+                                        Text(
+                                          _label,
+                                          style: TextStyle(
+                                              color: cardcolorhome,
+                                              fontSize: 23,
+                                              fontWeight: FontWeight.bold),
+                                        )
+                                      ],
+                                    );
+                                  },
+                                ),
                               ],
                             ),
                           ),
-                          Text("home"),
-                          const Text('What Do You Want To Improve Today ?'),
+
                           //style: kHeaderTS),
-                          const SizedBox(height: 15),
+                          //const SizedBox(height: 15),
+                          // Text(
+                          //   "Course",
+                          //   style: TextStyle(
+                          //       color: Color(0xFF00164E),
+                          //       fontSize: 16,
+                          //       fontWeight: FontWeight.bold),
+                          // )
                         ],
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Text(
+                        "Course",
+                        style: TextStyle(
+                            color: Color(0xFF00164E),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Expanded(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        padding: const EdgeInsets.symmetric(horizontal: 6),
                         child: ContentArea(
                           addPadding: false,
                           child: Obx(
@@ -93,7 +140,8 @@ class HomeScreen extends GetView<MyDrawerController> {
                                 _quizePprContoller.getAllPapers();
                               },
                               child: ListView.separated(
-                                padding: UIParameters.screenPadding,
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 20),
                                 shrinkWrap: true,
                                 itemCount: _quizePprContoller.allPapers.length,
                                 itemBuilder: (BuildContext context, int index) {

@@ -5,3 +5,5 @@ export 'authentication/auth_controller.dart';
 export 'common/drawer_controller.dart';
 export 'upload/papers_data_uploader.dart';
 export 'quiz_paper/quiz_papers_controller.dart';
+export 'quiz_paper/quiz_controller.dart';
+export 'quiz_paper/quiz_result_extention_qc.dart';

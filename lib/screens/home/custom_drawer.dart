@@ -29,9 +29,98 @@ class CustomDrawer extends GetView<MyDrawerController> {
                     controller.toggleDrawer();
                   },
                 )),
+            Padding(
+              padding: EdgeInsets.only(
+                  right: MediaQuery.of(context).size.width * 0.3),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Obx(() => controller.user.value == null
+                      ? TextButton.icon(
+                          icon: const Icon(Icons.login_rounded),
+                          style: TextButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 15),
+                              elevation: 0,
+                              backgroundColor: Colors.white.withOpacity(0.5),
+                              primary: Colors.white),
+                          onPressed: () {
+                            controller.signIn();
+                          },
+                          label: const Text("Sign in"))
+                      : GestureDetector(
+                          onTap: () {
+                            //Get.toNamed(ProfileScreen.routeName);
+                          },
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 12, bottom: 10),
+                              child: CircleAvatar(
+                                foregroundImage:
+                                    controller.user.value!.photoURL == null
+                                        ? null
+                                        : NetworkImage(
+                                            controller.user.value!.photoURL!),
+                                backgroundColor: Colors.white,
+                                radius: 40,
+                              ),
+                            ),
+                          ),
+                        )),
+                  const Spacer(flex: 1),
+                  _DrawerButton(
+                      onPressed: () => null, //controller.github(),
+                      icon: AppIcons.github,
+                      label: 'GitHub'),
+                  _DrawerButton(
+                    icon: Icons.code,
+                    label: 'Source Code',
+                    onPressed: () => null, //controller.downloadSourceCode(),
+                  ),
+                  _DrawerButton(
+                      icon: AppIcons.contact,
+                      label: 'Another project',
+                      onPressed: () {}),
+                  const Spacer(flex: 4),
+                  _DrawerButton(
+                    icon: AppIcons.logout,
+                    label: 'Sign out',
+                    onPressed: () {
+                      controller.signOut();
+                    },
+                  ),
+                ],
+              ),
+            )
           ],
         )),
       ),
     );
+  }
+}
+
+class _DrawerButton extends StatelessWidget {
+  const _DrawerButton({
+    Key? key,
+    required this.icon,
+    required this.label,
+    this.onPressed,
+  }) : super(key: key);
+
+  final IconData icon;
+  final String label;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton.icon(
+        onPressed: onPressed,
+        icon: Icon(
+          icon,
+          size: 15,
+        ),
+        label: Align(alignment: Alignment.centerLeft, child: Text(label)));
   }
 }

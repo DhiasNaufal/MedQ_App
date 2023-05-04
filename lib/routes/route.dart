@@ -25,6 +25,20 @@ class AppRoutes {
         GetPage(
           name: CustomDrawer.routeName,
           page: () => CustomDrawer(),
-        )
+        ),
+        GetPage(name: LoginScreen.routeName, page: () => LoginScreen()),
+        GetPage(
+            page: () => QuizeScreen(),
+            name: QuizeScreen.routeName,
+            binding: BindingsBuilder(() {
+              Get.put<QuizController>(QuizController());
+            })),
+        GetPage(
+            page: () => const AnswersCheckScreen(),
+            name: AnswersCheckScreen.routeName),
+        GetPage(
+            page: () => const QuizOverviewScreen(),
+            name: QuizOverviewScreen.routeName),
+        GetPage(page: () => const Resultcreen(), name: Resultcreen.routeName),
       ];
 }

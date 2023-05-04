@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -10,9 +11,8 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
-        child: const Text("introScreen"),
+        child: SvgPicture.asset('assets/images/logo_splash.svg'),
       ),
     );
   }
 }
- 

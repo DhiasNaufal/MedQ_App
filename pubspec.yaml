@@ -45,6 +45,9 @@ dependencies:
   easy_separator: ^1.0.1
   firebase_auth: ^4.4.1
   google_fonts: ^4.0.3
+  google_sign_in: ^6.1.0
+  flutter_svg: ^1.1.6
+  shimmer: ^2.0.0
 
 dev_dependencies:
   flutter_test:

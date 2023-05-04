@@ -9,9 +9,9 @@ const kDetailsTS = TextStyle(fontSize: 12);
 TextStyle cardTitleTs(context) => TextStyle(
     color: UIParameters.isDarkMode(context)
         ? Theme.of(context).textTheme.bodyText1!.color
-        : Theme.of(context).primaryColor,
-    fontSize: 18,
-    fontWeight: FontWeight.bold);
+        : Theme.of(context).textTheme.bodyText1!.color,
+    fontSize: 20,
+    fontWeight: FontWeight.w200);
 
 const kQuizeTS = TextStyle(fontSize: 16, fontWeight: FontWeight.w800);
 

@@ -1,6 +1,7 @@
 import 'package:cdss_quiz/controllers/controllers.dart';
 import 'package:cdss_quiz/firebase/firebase_configs.dart';
 import 'package:cdss_quiz/models/models.dart';
+import 'package:cdss_quiz/screens/screens.dart';
 import 'package:cdss_quiz/utils/utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
@@ -33,20 +34,23 @@ class QuizPaperController extends GetxController {
     }
   }
 
-  // void navigatoQuestions(
-  //     {required QuizPaperModel paper, bool isTryAgain = false}) {
-  //   AuthController _authController = Get.find();
+  void navigatoQuestions(
+      //Get.toNamed(QuizeScreen.routeName, arguments: paper);
+      {required QuizPaperModel paper,
+      bool isTryAgain = false}) {
+    AuthController _authController = Get.find();
 
-  //   if (_authController.isLogedIn()) {
-  //     if (isTryAgain) {
-  //       Get.back();
-  //       Get.offNamed(QuizeScreen.routeName,
-  //           arguments: paper, preventDuplicates: false);
-  //     } else {
-  //       Get.toNamed(QuizeScreen.routeName, arguments: paper);
-  //     }
-  //   } else {
-  //     _authController.showLoginAlertDialog();
-  //   }
-  // }
+    if (_authController.isLogedIn()) {
+      if (isTryAgain) {
+        Get.back();
+        Get.offNamed(QuizeScreen.routeName,
+            arguments: paper, preventDuplicates: false);
+      } else {
+        Get.toNamed(QuizeScreen.routeName, arguments: paper);
+      }
+    } else {
+      //Get.toNamed(QuizeScreen.routeName, arguments: paper);
+      _authController.showLoginAlertDialog();
+    }
+  }
 }

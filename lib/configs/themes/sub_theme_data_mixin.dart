@@ -10,6 +10,6 @@ mixin SubThemeData {
   }
 
   IconThemeData getIconTheme() {
-    return const IconThemeData(color: kOnSurfaceTextColor, size: 30);
+    return const IconThemeData(color: kOnSurfaceTextColor, size: 16);
   }
 }

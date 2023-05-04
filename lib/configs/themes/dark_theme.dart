@@ -23,6 +23,7 @@ class DarkTheme with SubThemeData {
       textTheme: getTextThemes()
           .apply(bodyColor: mainTextColorLT, displayColor: mainTextColorLT),
       primaryColor: primaryColorLT,
+      //cardColor:
     );
   }
 }
