@@ -23,14 +23,13 @@ class AnswerCard extends StatelessWidget {
       child: Ink(
         child: Text(
           answer,
-          style: TextStyle(color: isSelected ? kOnSurfaceTextColor : null),
+          style: TextStyle(
+              color: isSelected ? kOnSurfaceTextColor : Color(0xFF00164E)),
         ),
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         decoration: BoxDecoration(
             borderRadius: UIParameters.cardBorderRadius,
-            color: isSelected
-                ? answerSelectedColor(context)
-                : Theme.of(context).cardColor,
+            color: isSelected ? customQuizAction(context) : Colors.white,
             border: Border.all(
                 color: isSelected
                     ? answerSelectedColor(context)
@@ -54,12 +53,12 @@ class CorrectAnswerCard extends StatelessWidget {
       child: Text(
         answer,
         style: const TextStyle(
-            color: kCorrectAnswerColor, fontWeight: FontWeight.bold),
+            color: Color(0xFF00164E), fontWeight: FontWeight.bold),
       ),
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       decoration: BoxDecoration(
         borderRadius: UIParameters.cardBorderRadius,
-        color: kCorrectAnswerColor.withOpacity(0.1),
+        color: kCorrectAnswerColor.withOpacity(0.8),
       ),
     );
   }
@@ -79,12 +78,12 @@ class WrongAnswerCard extends StatelessWidget {
       child: Text(
         answer,
         style: const TextStyle(
-            color: kWrongAnswerColor, fontWeight: FontWeight.bold),
+            color: Color(0xFF00164E), fontWeight: FontWeight.bold),
       ),
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       decoration: BoxDecoration(
         borderRadius: UIParameters.cardBorderRadius,
-        color: kWrongAnswerColor.withOpacity(0.1),
+        color: kWrongAnswerColor.withOpacity(0.8),
       ),
     );
   }

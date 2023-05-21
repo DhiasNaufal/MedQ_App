@@ -2,14 +2,16 @@ import 'package:cdss_quiz/configs/configs.dart';
 import 'package:flutter/material.dart';
 
 class ContentArea extends StatelessWidget {
+  final Widget child;
+  final Color? color;
+  final bool addPadding;
+
   const ContentArea({
     Key? key,
     required this.child,
+    required this.color,
     this.addPadding = true,
   }) : super(key: key);
-
-  final Widget child;
-  final bool addPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class ContentArea extends StatelessWidget {
       type: MaterialType.transparency,
       child: Ink(
         decoration: BoxDecoration(
-          color: primaryLightColorLT,
+          color: color,
         ),
         padding: addPadding
             ? const EdgeInsets.only(

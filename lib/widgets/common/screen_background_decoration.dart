@@ -16,44 +16,11 @@ class BackgroundDecoration extends StatelessWidget {
         Positioned.fill(
             child: Container(
           decoration: BoxDecoration(
-              color: showGradient ? null : Theme.of(context).primaryColor,
+              color: customQuizBackgroundColor(context),
               gradient: showGradient ? mainGradient(context) : null),
-          child: CustomPaint(
-            painter: BackgroundPainter(),
-          ),
         )),
         Positioned.fill(child: SafeArea(child: child))
       ],
     );
-  }
-}
-
-class BackgroundPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()..color = Colors.white.withOpacity(0.1);
-
-    final path = Path();
-
-    path.moveTo(0, 0);
-    path.lineTo(size.width * 0.2, 0);
-    path.lineTo(0, size.height * 0.4);
-    path.close();
-
-    final path2 = Path();
-
-    path2.moveTo(size.width, 0);
-    path2.lineTo(size.width * 0.8, 0);
-    path2.lineTo(size.width * 0.2, size.height);
-    path2.lineTo(size.width, size.height);
-    path2.close();
-
-    canvas.drawPath(path, paint);
-    canvas.drawPath(path2, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
   }
 }

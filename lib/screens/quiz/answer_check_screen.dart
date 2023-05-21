@@ -30,6 +30,7 @@ class AnswersCheckScreen extends GetView<QuizController> {
             children: [
               Expanded(
                 child: ContentArea(
+                  color: customContentQuizColor(context),
                   child: SingleChildScrollView(
                     padding: const EdgeInsets.only(top: 20),
                     child: Column(

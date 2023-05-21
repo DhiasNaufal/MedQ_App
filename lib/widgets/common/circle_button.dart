@@ -7,19 +7,22 @@ class CircularButton extends StatelessWidget {
     this.color,
     this.onTap,
     this.width = 60.0,
+    required this.material,
   }) : super(key: key);
 
   final Widget child;
   final Color? color;
   final double width;
   final VoidCallback? onTap;
+  final MaterialType material;
 
   @override
   Widget build(BuildContext context) {
     return Material(
+        color: Colors.black,
         shape: const CircleBorder(),
         clipBehavior: Clip.hardEdge,
-        type: MaterialType.transparency,
+        type: material,
         child: InkWell(
             onTap: onTap,
             child: Padding(

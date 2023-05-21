@@ -7,7 +7,6 @@ class QuizScreenPlaceHolder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     var line = Container(
       width: double.infinity,
       height: 12.0,
@@ -15,10 +14,10 @@ class QuizScreenPlaceHolder extends StatelessWidget {
     );
 
     var answer = Container(
-            width: double.infinity,
-            height: 50.0,
-            color: Theme.of(context).scaffoldBackgroundColor,
-          );
+      width: double.infinity,
+      height: 50.0,
+      color: Theme.of(context).scaffoldBackgroundColor,
+    );
 
     return Shimmer.fromColors(
       baseColor: Colors.white.withOpacity(0.4),

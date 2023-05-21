@@ -1,6 +1,7 @@
 import 'package:cdss_quiz/controllers/controllers.dart';
 import 'package:cdss_quiz/screens/home/custom_drawer.dart';
 import 'package:cdss_quiz/screens/intro/intro_screen.dart';
+import 'package:cdss_quiz/screens/intro/onBoarding_screen.dart';
 import 'package:cdss_quiz/screens/screens.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
@@ -40,5 +41,17 @@ class AppRoutes {
             page: () => const QuizOverviewScreen(),
             name: QuizOverviewScreen.routeName),
         GetPage(page: () => const Resultcreen(), name: Resultcreen.routeName),
+        GetPage(
+            page: () => LeaderBoardScreen(),
+            name: LeaderBoardScreen.routeName,
+            binding: BindingsBuilder(() {
+              Get.put(LeaderBoardController());
+            })),
+        GetPage(
+            page: () => OnBoardingScreen(),
+            name: OnBoardingScreen.routeName,
+            binding: BindingsBuilder(() {
+              Get.put<OnBoardingController>(OnBoardingController());
+            }))
       ];
 }

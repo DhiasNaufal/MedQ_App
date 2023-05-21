@@ -53,26 +53,26 @@
         },
         {
             "id": "pkt001q003",
-            "question": "Tahapan dalam proses pengambilan keputusan dengan DSS adalah:",
+            "question": "Apa keuntungan menggunakan Sistem Pendukung Keputusan (DSS)?",
             "answers": [
                 {
                     "identifier": "A",
-                    "Answer": "Tahapan dalam proses pengambilan keputusan dengan DSS adalah:"
+                    "Answer": "Meningkatkan kecepatan pengambilan keputusan"
                 },
                 {
                     "identifier": "B",
-                    "Answer": "Identifikasi masalah, evaluasi solusi, pemilihan solusi"
+                    "Answer": "Menghilangkan risiko kesalahan manusia dalam pengambilan keputusan"
                 },
                 {
                     "identifier": "C",
-                    "Answer": "Pemilihan solusi, evaluasi solusi, identifikasi masalah"
+                    "Answer": "Memberikan panduan yang akurat untuk pengambilan keputusan"
                 },
                 {
                     "identifier": "D",
-                    "Answer": "Evaluasi solusi, pemilihan solusi, identifikasi masalah"
+                    "Answer": " Semua jawaban di atas benar"
                 }
             ],
-            "correct_answer": "A"
+            "correct_answer": "D"
         },
         {
             "id": "pkt001q004",
@@ -95,7 +95,7 @@
                     "Answer": "Data warehouse DSS, data-driven DSS, dan artificial intelligence DSS"
                 }
             ],
-            "correct_answer": "A"
+            "correct_answer": "D"
         },
         {
             "id": "pkt001q005",

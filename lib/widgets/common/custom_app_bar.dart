@@ -53,6 +53,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                             () {
                               Get.toNamed(QuizOverviewScreen.routeName);
                             },
+                        material: MaterialType.transparency,
                       ),
                     )
                 ],

@@ -41,8 +41,9 @@ class MainButton extends StatelessWidget {
                   ),
             ),
             decoration: BoxDecoration(
+                border: Border.all(color: customQuizAction(context), width: 2),
                 borderRadius: BorderRadius.circular(kButtonCornerRadius),
-                color: color ?? Theme.of(context).primaryColor),
+                color: color ?? customQuizAction(context)),
           ),
         ),
       ),

@@ -7,3 +7,5 @@ export 'upload/papers_data_uploader.dart';
 export 'quiz_paper/quiz_papers_controller.dart';
 export 'quiz_paper/quiz_controller.dart';
 export 'quiz_paper/quiz_result_extention_qc.dart';
+export 'leader_board/leader_board_controller.dart';
+export 'intro/onboarding_controller.dart';

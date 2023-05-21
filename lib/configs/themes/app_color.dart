@@ -1,34 +1,76 @@
 import 'package:flutter/material.dart';
 import 'package:cdss_quiz/configs/configs.dart';
 
+// ======= Light Mode Color ======= //
+const Color kBackgroundLightMode = Color(0xFFFAFDFB);
+const Color kContentAreaLightMode = Color(0xFF006A60);
+//const Color k
+
+// ======= Night Mode Color ======= //
+const Color kBackgroundNightMode = Color(0xFF191C1B);
+const Color kDarkModeLigher = Color(0xFF1C3531);
+const kOnNetralColor = Colors.black;
+const kOnprimaryLightColor = Color(0xFF405AA9);
+const kLighterPrimaryColor = Color(0xFFDCE1FF);
+const kPrimaryDarkColor = Color(0xFF00164E);
+const kSecondaryColor = Color(0xFFFFB957);
+
+const kSelectedAnswer = Color(0xFFB5C4FF);
+
 const kOnSurfaceTextColor = Colors.white;
-const kCorrectAnswerColor = Color.fromARGB(255, 0, 188, 100);
-const kWrongAnswerColor = Color.fromARGB(255, 230, 24, 24);
+const kCorrectAnswerColor = Color(0xFF71C582);
+const kWrongAnswerColor = Color(0xFFA43A3F);
 const kNotAnswerColor = Color.fromARGB(255, 120, 50, 80);
 
 const mainGradientLT = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [primaryColorLT, primaryLightColorLT]);
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      Color(0xFF003731),
+      Color(0xFF00A293),
+    ]);
 
 const mainGradientDT = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
     colors: [
-      primaryLightColorDT,
-      primaryColorDT,
+      kBackgroundNightMode,
+      kDarkModeLigher,
     ]);
 
 LinearGradient mainGradient(BuildContext context) =>
     UIParameters.isDarkMode(context) ? mainGradientDT : mainGradientLT;
-Color customScaffoldColor(BuildContext context) =>
+Color customOnHomeBackgroundColor(BuildContext context) =>
+    UIParameters.isDarkMode(context) ? Colors.white : Colors.black;
+
+Color customHomeBackgroundColor(BuildContext context) =>
     UIParameters.isDarkMode(context)
-        ? const Color.fromARGB(255, 14, 20, 44)
-        : const Color.fromARGB(255, 240, 237, 255);
+        ? const Color(0xFF191C1B)
+        : Color(0xFFFAFDFB);
+
+Color customQuizBackgroundColor(BuildContext context) =>
+    UIParameters.isDarkMode(context)
+        ? Color(0xFF1C3531)
+        : const Color(0xFF005048);
+
+Color customContentHomeColor(BuildContext context) =>
+    UIParameters.isDarkMode(context)
+        ? const Color(0xFFCCE8E2)
+        : const Color(0xFF006A60);
+
+Color customContentQuizColor(BuildContext context) =>
+    UIParameters.isDarkMode(context)
+        ? const Color(0xFFCCE8E2)
+        : const Color(0xFFDAE5E1);
+
 Color answerBorderColor(BuildContext context) =>
     UIParameters.isDarkMode(context)
-        ? const Color.fromARGB(255, 20, 46, 158)
+        ? const Color.fromARGB(255, 221, 221, 221)
         : const Color.fromARGB(255, 221, 221, 221);
+
+Color customQuizAction(BuildContext context) => UIParameters.isDarkMode(context)
+    ? const Color(0xFF334B47)
+    : const Color(0xFF006A60);
 
 Color answerSelectedColor(BuildContext context) =>
     Theme.of(context).primaryColor;

@@ -19,12 +19,19 @@ class AuthController extends GetxController {
 
   void initAuth() async {
     await Future.delayed(const Duration(seconds: 2));
+
     _auth = FirebaseAuth.instance;
     _authStateChanges = _auth.authStateChanges();
     _authStateChanges.listen((User? user) {
       _user.value = user;
     });
-    navigateToIntroduction();
+    // if (_auth.currentUser == null) {
+    //   navigateToOnboarding();
+    // } else {
+    //   navigateToHome();
+    // }
+    navigateToOnboarding();
+    //navigateToIntroduction();
   }
 
   Future<void> siginInWithGoogle() async {
@@ -75,6 +82,10 @@ class AuthController extends GetxController {
 
   void navigateToIntroduction() {
     Get.offAllNamed(IntroScreen.routeName);
+  }
+
+  void navigateToOnboarding() {
+    Get.offAllNamed(OnBoardingScreen.routeName);
   }
 
   void navigateToHome() {

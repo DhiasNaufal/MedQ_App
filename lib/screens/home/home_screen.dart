@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:cdss_quiz/configs/configs.dart';
 import 'package:cdss_quiz/controllers/common/drawer_controller.dart';
 import 'package:cdss_quiz/controllers/controllers.dart';
@@ -27,11 +25,14 @@ class HomeScreen extends GetView<MyDrawerController> {
           angle: 0.0,
           menuScreen: const CustomDrawer(),
           style: DrawerStyle.DefaultStyle,
-          backgroundColor: Colors.white.withOpacity(0.5),
+          //backgroundColor: Colors.black,
           slideWidth: MediaQuery.of(context).size.width * 0.6,
           mainScreen: Container(
             decoration: BoxDecoration(
-                color: Colors.white), //gradient: mainGradient(context)),
+                //   gradient: mainGradient(context),
+                // ),
+                color: Theme.of(context)
+                    .scaffoldBackgroundColor), //gradient: mainGradient(context)),
             child: SafeArea(
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,9 +46,10 @@ class HomeScreen extends GetView<MyDrawerController> {
                             offset: const Offset(-10, 0),
                             child: CircularButton(
                               onTap: controller.toggleDrawer,
-                              child: const Icon(
+                              material: MaterialType.transparency,
+                              child: Icon(
                                 AppIcons.menuleft,
-                                color: Colors.black,
+                                color: customOnHomeBackgroundColor(context),
                               ),
                             ),
                           ),
@@ -71,23 +73,20 @@ class HomeScreen extends GetView<MyDrawerController> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                          "Hello,",
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 35,
-                                              fontWeight: FontWeight.w100),
-                                        ),
+                                        Text("Hello,",
+                                            style: kHomeHeader.copyWith(
+                                                color:
+                                                    customOnHomeBackgroundColor(
+                                                        context))),
                                         SizedBox(
                                           height: 4,
                                         ),
-                                        Text(
-                                          _label,
-                                          style: TextStyle(
-                                              color: cardcolorhome,
-                                              fontSize: 23,
-                                              fontWeight: FontWeight.bold),
-                                        )
+                                        Text(_label,
+                                            style: kHomeHeader.copyWith(
+                                                color: Theme.of(context)
+                                                    .primaryColor,
+                                                fontSize: 24,
+                                                fontWeight: FontWeight.bold))
                                       ],
                                     );
                                   },
@@ -95,29 +94,14 @@ class HomeScreen extends GetView<MyDrawerController> {
                               ],
                             ),
                           ),
-
-                          //style: kHeaderTS),
-                          //const SizedBox(height: 15),
-                          // Text(
-                          //   "Course",
-                          //   style: TextStyle(
-                          //       color: Color(0xFF00164E),
-                          //       fontSize: 16,
-                          //       fontWeight: FontWeight.bold),
-                          // )
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: Text(
-                        "Course",
-                        style: TextStyle(
-                            color: Color(0xFF00164E),
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
+                    // Center(
+                    //   child: Text("Course",
+                    //       style: kTitlePrimary.copyWith(
+                    //           color: customContentHomeColor(context))),
+                    // ),
                     SizedBox(
                       height: 10,
                     ),
@@ -125,6 +109,7 @@ class HomeScreen extends GetView<MyDrawerController> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 6),
                         child: ContentArea(
+                          color: customContentHomeColor(context),
                           addPadding: false,
                           child: Obx(
                             () => LiquidPullToRefresh(

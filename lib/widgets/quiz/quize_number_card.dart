@@ -20,7 +20,7 @@ class QuizNumberCard extends StatelessWidget {
 
     switch (status) {
       case AnswerStatus.answered:
-        _backgroundColor = Theme.of(context).primaryColor;
+        _backgroundColor = customQuizAction(context);
         break;
       case AnswerStatus.correct:
         _backgroundColor = kCorrectAnswerColor;

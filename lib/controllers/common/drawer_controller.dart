@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 class MyDrawerController extends GetxController {
   final zoomDrawerController = ZoomDrawerController();
   Rxn<User?> user = Rxn();
+
   void toggleDrawer() {
     zoomDrawerController.toggle?.call();
     update();

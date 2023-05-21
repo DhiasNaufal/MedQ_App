@@ -1,6 +1,12 @@
 import 'package:cdss_quiz/configs/configs.dart';
 import 'package:flutter/material.dart';
 
+const kHomeHeader =
+    TextStyle(fontSize: 35, color: kOnNetralColor, fontWeight: FontWeight.w100);
+const kTitlePrimary = TextStyle(
+    fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFF00164E));
+//const kOnNickName = TextStyle()
+
 const kHeaderTS = TextStyle(
     fontSize: 22, fontWeight: FontWeight.w700, color: kOnSurfaceTextColor);
 
@@ -13,7 +19,8 @@ TextStyle cardTitleTs(context) => TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w200);
 
-const kQuizeTS = TextStyle(fontSize: 16, fontWeight: FontWeight.w800);
+const kQuizeTS = TextStyle(
+    fontSize: 16, fontWeight: FontWeight.w800, color: kPrimaryDarkColor);
 
 const kAppBarTS = TextStyle(
     fontWeight: FontWeight.bold, fontSize: 16, color: kOnSurfaceTextColor);

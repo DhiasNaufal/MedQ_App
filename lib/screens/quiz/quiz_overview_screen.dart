@@ -21,68 +21,79 @@ class QuizOverviewScreen extends GetView<QuizController> {
           children: [
             Expanded(
               child: ContentArea(
+                  color: customContentQuizColor(context),
                   child: Column(
-                children: [
-                  Row(
                     children: [
-                      CountdownTimer(
-                        color: UIParameters.isDarkMode(context)
-                            ? Theme.of(context).textTheme.bodyText1!.color
-                            : Theme.of(context).primaryColor,
-                        time: '',
+                      Row(
+                        children: [
+                          CountdownTimer(
+                            color: UIParameters.isDarkMode(context)
+                                ? Theme.of(context).textTheme.bodyText1!.color
+                                : Theme.of(context).primaryColor,
+                            time: '',
+                          ),
+                          Obx(
+                            () => Text(
+                              '${controller.time} Remining',
+                              style: countDownTimerTs(context),
+                            ),
+                          )
+                        ],
                       ),
-                      Obx(
-                        () => Text(
-                          '${controller.time} Remining',
-                          style: countDownTimerTs(context),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Expanded(
+                          child: GridView.builder(
+                              itemCount: controller.allQuestions.length,
+                              shrinkWrap: true,
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount:
+                                          UIParameters.getWidth(context) ~/ 75,
+                                      childAspectRatio: 1,
+                                      crossAxisSpacing: 8,
+                                      mainAxisSpacing: 8),
+                              physics: const BouncingScrollPhysics(),
+                              itemBuilder: (_, index) {
+                                AnswerStatus? _answerStatus;
+                                if (controller
+                                        .allQuestions[index].selectedAnswer !=
+                                    null) {
+                                  _answerStatus = AnswerStatus.answered;
+                                }
+                                return QuizNumberCard(
+                                  index: index + 1,
+                                  status: _answerStatus,
+                                  onTap: () {
+                                    controller.jumpToQuestion(index);
+                                  },
+                                );
+                              })),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 40),
+                        child: MainButton(
+                          onTap: () {
+                            controller.complete();
+                          },
+                          title: 'Complete',
                         ),
-                      )
+                      ),
                     ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Expanded(
-                      child: GridView.builder(
-                          itemCount: controller.allQuestions.length,
-                          shrinkWrap: true,
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount:
-                                      UIParameters.getWidth(context) ~/ 75,
-                                  childAspectRatio: 1,
-                                  crossAxisSpacing: 8,
-                                  mainAxisSpacing: 8),
-                          physics: const BouncingScrollPhysics(),
-                          itemBuilder: (_, index) {
-                            AnswerStatus? _answerStatus;
-                            if (controller.allQuestions[index].selectedAnswer !=
-                                null) {
-                              _answerStatus = AnswerStatus.answered;
-                            }
-                            return QuizNumberCard(
-                              index: index + 1,
-                              status: _answerStatus,
-                              onTap: () {
-                                controller.jumpToQuestion(index);
-                              },
-                            );
-                          }))
-                ],
-              )),
+                  )),
             ),
-            ColoredBox(
-              color: Theme.of(context).scaffoldBackgroundColor,
-              child: Padding(
-                padding: UIParameters.screenPadding,
-                child: MainButton(
-                  onTap: () {
-                    controller.complete();
-                  },
-                  title: 'Complete',
-                ),
-              ),
-            )
+            // ColoredBox(
+            //   color: kLighterPrimaryColor,
+            //   child: Padding(
+            //     padding: UIParameters.screenPadding,
+            //     child: MainButton(
+            //       onTap: () {
+            //         controller.complete();
+            //       },
+            //       title: 'Complete',
+            //     ),
+            //   ),
+            // )
           ],
         ),
       ),
