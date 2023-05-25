@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:cdss_quiz/configs/configs.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 // ======= Light Mode Color ======= //
 const Color kBackgroundLightMode = Color(0xFFFAFDFB);
 const Color kContentAreaLightMode = Color(0xFF006A60);
-//const Color k
-
+// ======= Accent Color ======= //
+const Color accentColorLT = Color(0xFF00201C);
+const Color accentColorDT = Color(0xFF53DBC9);
 // ======= Night Mode Color ======= //
 const Color kBackgroundNightMode = Color(0xFF191C1B);
 const Color kDarkModeLigher = Color(0xFF1C3531);
@@ -40,6 +42,13 @@ const mainGradientDT = LinearGradient(
 
 LinearGradient mainGradient(BuildContext context) =>
     UIParameters.isDarkMode(context) ? mainGradientDT : mainGradientLT;
+
+Color accentColor(BuildContext context) =>
+    UIParameters.isDarkMode(context) ? accentColorDT : accentColorLT;
+
+Color customPrimaryButton(BuildContext context) =>
+    UIParameters.isDarkMode(context) ? customPrimaryButtonDT : primaryColorLT;
+
 Color customOnHomeBackgroundColor(BuildContext context) =>
     UIParameters.isDarkMode(context) ? Colors.white : Colors.black;
 
@@ -72,5 +81,8 @@ Color customQuizAction(BuildContext context) => UIParameters.isDarkMode(context)
     ? const Color(0xFF334B47)
     : const Color(0xFF006A60);
 
+Color customsvg(BuildContext context) => UIParameters.isDarkMode(context)
+    ? const Color(0xFFE6F1EF)
+    : const Color(0xFFDAE5E1);
 Color answerSelectedColor(BuildContext context) =>
     Theme.of(context).primaryColor;

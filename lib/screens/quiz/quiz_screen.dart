@@ -15,15 +15,17 @@ class QuizeScreen extends GetView<QuizController> {
     return WillPopScope(
       onWillPop: controller.onExitOfQuiz,
       child: Scaffold(
+
           //backgroundColor: customQuizBackgroundColor(context),
           extendBodyBehindAppBar: true,
           appBar: CustomAppBar(
+            backColor: Colors.white,
             leading: Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               child: Obx(
                 () => CountdownTimer(
                   time: controller.time.value,
-                  color: kPrimaryDarkColor,
+                  color: cardColorDT,
                 ),
               ),
               decoration: BoxDecoration(
@@ -107,14 +109,16 @@ class QuizeScreen extends GetView<QuizController> {
                                         height: 55,
                                         width: 55,
                                         child: MainButton(
-                                          color:
-                                              customContentQuizColor(context),
+                                          color: customPrimaryButton(context),
                                           onTap: () {
                                             controller.prevQuestion();
                                           },
+                                          border:
+                                              Theme.of(context).primaryColor,
                                           child: Icon(
                                             Icons.arrow_back_ios_new,
-                                            color: customQuizAction(context),
+                                            color:
+                                                customContentHomeColor(context),
                                           ),
                                         ),
                                       ),
@@ -127,7 +131,7 @@ class QuizeScreen extends GetView<QuizController> {
                                             controller.loadingStatus.value ==
                                                 LoadingStatus.completed,
                                         child: MainButton(
-                                          color: customQuizAction(context),
+                                          color: customPrimaryButton(context),
                                           onTap: () {
                                             controller.islastQuestion
                                                 ? Get.toNamed(QuizOverviewScreen
@@ -137,6 +141,8 @@ class QuizeScreen extends GetView<QuizController> {
                                           title: controller.islastQuestion
                                               ? 'Complete'
                                               : 'Next',
+                                          border:
+                                              Theme.of(context).primaryColor,
                                         ),
                                       ),
                                     ),

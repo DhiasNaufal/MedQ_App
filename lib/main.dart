@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/*Initialized Firebase Function*/
+// /*Initialized Firebase Function*/
 // Future<void> initFireBase() async {
 //   await Firebase.initializeApp(
 //     name: 'quizzle-demo',

@@ -106,6 +106,7 @@ class AnswersCheckScreen extends GetView<QuizController> {
                           onTap: () {
                             controller.prevQuestion();
                           },
+                          border: customPrimaryButton(context),
                           child: const Icon(Icons.arrow_back_ios_new),
                         ),
                       ),
@@ -118,6 +119,7 @@ class AnswersCheckScreen extends GetView<QuizController> {
                             controller.nextQuestion();
                           },
                           title: 'Next',
+                          border: customPrimaryButton(context),
                         ),
                       )
                     ],

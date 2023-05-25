@@ -18,10 +18,11 @@ class OnBoardingController extends GetxController {
   }
 
   List<OnboardingInfo> onboardingPages = [
-    OnboardingInfo('assets/images/logo_splash.svg', 'lalala', 'lalala'),
-    OnboardingInfo('assets/images/logo_splash.svg', 'Cooking Safe Food',
-        'We are maintain safty and We keep clean while making food.'),
-    OnboardingInfo('assets/images/logo_splash.svg', 'Quick Delivery',
-        'Orders your favorite meals will be  immediately deliver')
+    OnboardingInfo('assets/images/hallo-ilustration.svg', 'Halo!',
+        'Selamat Datang di Aplikasi Pembelajaran Clinical Decision Support System (CDSS)'),
+    OnboardingInfo('assets/images/milestones.svg', 'Set Up Your Goals',
+        'Tetapkan tujuanmu dan selesaikan semua kuis kuis yang tersedia'),
+    OnboardingInfo('assets/images/winner.svg', 'Become A Winner',
+        'Jadilah nomor 1 dan dapatkan keuntungan yang lebih!')
   ];
 }

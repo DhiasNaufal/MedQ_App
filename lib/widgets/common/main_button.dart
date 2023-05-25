@@ -2,15 +2,16 @@ import 'package:cdss_quiz/configs/configs.dart';
 import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
-  const MainButton({
-    Key? key,
-    this.title = '   ',
-    required this.onTap,
-    this.enabled = true,
-    this.child,
-    this.color,
-  }) : super(key: key);
-
+  const MainButton(
+      {Key? key,
+      this.title = '   ',
+      required this.onTap,
+      this.enabled = true,
+      this.child,
+      this.color,
+      required this.border})
+      : super(key: key);
+  final Color border;
   final String title;
   final VoidCallback onTap;
   final bool enabled;
@@ -41,7 +42,7 @@ class MainButton extends StatelessWidget {
                   ),
             ),
             decoration: BoxDecoration(
-                border: Border.all(color: customQuizAction(context), width: 2),
+                border: Border.all(color: border, width: 2),
                 borderRadius: BorderRadius.circular(kButtonCornerRadius),
                 color: color ?? customQuizAction(context)),
           ),

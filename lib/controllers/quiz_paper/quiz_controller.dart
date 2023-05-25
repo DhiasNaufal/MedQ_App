@@ -44,7 +44,7 @@ class QuizController extends GetxController {
       duration,
       (Timer timer) {
         if (remainSeconds == 0) {
-          timer.cancel();
+          _timer!.cancel();
         } else {
           int minutes = remainSeconds ~/ 60;
           int seconds = (remainSeconds % 60);

@@ -14,6 +14,7 @@ class QuizOverviewScreen extends GetView<QuizController> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: CustomAppBar(
+        backColor: Colors.white,
         title: controller.completedQuiz,
       ),
       body: BackgroundDecoration(
@@ -73,10 +74,12 @@ class QuizOverviewScreen extends GetView<QuizController> {
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 40),
                         child: MainButton(
+                          color: customContentHomeColor(context),
                           onTap: () {
                             controller.complete();
                           },
                           title: 'Complete',
+                          border: customPrimaryButton(context),
                         ),
                       ),
                     ],

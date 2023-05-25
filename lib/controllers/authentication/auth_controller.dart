@@ -80,9 +80,9 @@ class AuthController extends GetxController {
     return _auth.currentUser != null;
   }
 
-  void navigateToIntroduction() {
-    Get.offAllNamed(IntroScreen.routeName);
-  }
+  // void navigateToIntroduction() {
+  //   Get.offAllNamed(IntroScreen.routeName);
+  // }
 
   void navigateToOnboarding() {
     Get.offAllNamed(OnBoardingScreen.routeName);

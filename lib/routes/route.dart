@@ -12,10 +12,10 @@ class AppRoutes {
           name: SplashScreen.routeName,
           page: () => SplashScreen(),
         ),
-        GetPage(
-          name: IntroScreen.routeName,
-          page: () => IntroScreen(),
-        ),
+        // GetPage(
+        //   name: IntroScreen.routeName,
+        //   page: () => IntroScreen(),
+        // ),
         GetPage(
             name: HomeScreen.routeName,
             page: () => HomeScreen(),

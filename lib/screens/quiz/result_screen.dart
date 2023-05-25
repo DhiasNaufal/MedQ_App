@@ -113,6 +113,7 @@ class Resultcreen extends GetView<QuizController> {
                                   onTap: () {
                                     controller.tryAgain();
                                   },
+                                  border: customPrimaryButton(context),
                                   child: Center(
                                     child: Text(
                                       "Coba lagi",
@@ -130,6 +131,7 @@ class Resultcreen extends GetView<QuizController> {
                                     controller.saveQuizResults();
                                   },
                                   title: 'Go to home',
+                                  border: customPrimaryButton(context),
                                 ))
                               ],
                             )),

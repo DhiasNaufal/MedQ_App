@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:cdss_quiz/controllers/controllers.dart';
 import 'package:cdss_quiz/firebase/firebase_configs.dart';
 import 'package:firebase_auth/firebase_auth.dart';

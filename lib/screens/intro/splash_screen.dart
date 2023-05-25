@@ -1,3 +1,4 @@
+import 'package:cdss_quiz/configs/configs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -11,7 +12,10 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
-        child: SvgPicture.asset('assets/images/logo_splash.svg'),
+        child: Image.asset(
+          'assets/icons/MEDQ.png',
+          height: UIParameters.getHeight(context) * 0.2,
+        ),
       ),
     );
   }

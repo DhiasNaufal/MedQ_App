@@ -1,10 +1,6 @@
 import 'package:cdss_quiz/configs/configs.dart';
-import 'package:cdss_quiz/screens/home/home_screen.dart';
-import 'package:cdss_quiz/widgets/common/circle_button.dart';
 import 'package:cdss_quiz/widgets/common/main_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:cdss_quiz/controllers/controllers.dart';
@@ -30,21 +26,26 @@ class OnBoardingScreen extends GetView<OnBoardingController> {
                         SizedBox(
                           height: UIParameters.getHeight(context) * 0.2,
                         ),
-                        SvgPicture.asset(
-                            controller.onboardingPages[index].imageAsset),
-                        SizedBox(height: 32),
-                        Text(
-                          controller.onboardingPages[index].title,
-                          style: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.w500),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: customsvg(context),
+                              borderRadius: BorderRadius.circular(10)),
+                          child: SvgPicture.asset(
+                            controller.onboardingPages[index].imageAsset,
+                            height: UIParameters.getHeight(context) * 0.21,
+                          ),
                         ),
+                        SizedBox(height: 42),
+                        Text(controller.onboardingPages[index].title,
+                            style:
+                                titleTS.copyWith(color: accentColor(context))),
                         SizedBox(height: 32),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 64.0),
                           child: Text(
                             controller.onboardingPages[index].description,
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 18),
+                            style: detailsTS,
                           ),
                         ),
                       ],
@@ -53,9 +54,7 @@ class OnBoardingScreen extends GetView<OnBoardingController> {
                 }),
             Padding(
               padding: EdgeInsets.only(
-                  bottom: UIParameters.getHeight(context) * 0.3),
-              // bottom: UIParameters.getHeight(context) * 0.2,
-              // left: UIParameters.getWidth(context) * 0.5,
+                  bottom: UIParameters.getHeight(context) * 0.2),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -69,9 +68,10 @@ class OnBoardingScreen extends GetView<OnBoardingController> {
                           width: 7,
                           height: 8,
                           decoration: BoxDecoration(
+                            border: Border.all(color: accentColor(context)),
                             color: controller.selectedPageIndex.value == index
-                                ? Theme.of(context).primaryColor
-                                : Colors.grey,
+                                ? accentColor(context)
+                                : Theme.of(context).scaffoldBackgroundColor,
                             shape: BoxShape.circle,
                           ),
                         );
@@ -98,38 +98,37 @@ class OnBoardingScreen extends GetView<OnBoardingController> {
                                     UIParameters.getHeight(context) * 0.1),
                             child: Center(
                                 child: MainButton(
-                                    child: Center(
-                                        child: Text(
-                                      "Let's get thhis done! shall we?",
-                                      style: TextStyle(
-                                          color: customHomeBackgroundColor(
-                                              context),
-                                          fontWeight: FontWeight.bold),
-                                    )),
-                                    color: customContentHomeColor(context),
-                                    onTap: (() => controller.forwardAction()))),
+                              child: Center(
+                                  child: Text(
+                                "Let's get this done! shall we?",
+                                style: TextStyle(
+                                    color: customHomeBackgroundColor(context),
+                                    fontWeight: FontWeight.bold),
+                              )),
+                              color: accentColor(context),
+                              onTap: (() => controller.forwardAction()),
+                              border: accentColor(context),
+                            )),
                           )
                         : Padding(
                             padding: EdgeInsets.only(
-                                bottom: UIParameters.getHeight(context) * 0.08,
-                                right: UIParameters.getWidth(context) * 0.1),
+                                bottom: UIParameters.getHeight(context) * 0.1,
+                                right: UIParameters.getWidth(context) * 0.12),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 FloatingActionButton(
-                                    backgroundColor:
-                                        customContentHomeColor(context),
+                                    elevation: 0,
+                                    backgroundColor: accentColor(context),
                                     onPressed: controller.forwardAction,
-                                    child: Icon(Icons.arrow_forward_ios)),
+                                    child: Icon(
+                                      Icons.arrow_forward_ios,
+                                      color: Theme.of(context)
+                                          .scaffoldBackgroundColor,
+                                    )),
                               ],
                             ),
                           );
-
-                    // : FloatingActionButton(
-                    //     backgroundColor: customContentHomeColor(context),
-                    //     //elevation: ,
-                    //     onPressed: controller.forwardAction,
-                    //     child: Icon(Icons.arrow_forward_ios));
                   },
                 ),
               ],
@@ -137,25 +136,22 @@ class OnBoardingScreen extends GetView<OnBoardingController> {
           ],
         ),
       ),
-      // floatingActionButton: Obx(
-      //   () {
-      //     return controller.isLastPage
-      //         ? FloatingActionButton.extended(
-      //             backgroundColor: customContentHomeColor(context),
-      //             onPressed: controller.forwardAction,
-      //             label: Text(
-      //               "Start",
-      //               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-      //             ),
-      //           )
-      //         : FloatingActionButton(
-      //             backgroundColor: customContentHomeColor(context),
-      //             //elevation: ,
-      //             onPressed: controller.forwardAction,
-      //             child: Icon(Icons.arrow_forward_ios));
-      //   },
-      // ),
-      //floatingActionButtonLocation: FloatingActionButtonLocation,
+    );
+  }
+}
+
+class CustomSvgIllustration extends StatelessWidget {
+  const CustomSvgIllustration({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final brightness = Theme.of(context).brightness;
+    final assetName = brightness == Brightness.dark
+        ? 'assets/svg_dark.svg'
+        : 'assets/svg_light.svg';
+
+    return SvgPicture.asset(
+      assetName,
     );
   }
 }

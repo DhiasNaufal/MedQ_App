@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 const kHomeHeader =
     TextStyle(fontSize: 35, color: kOnNetralColor, fontWeight: FontWeight.w100);
-const kTitlePrimary = TextStyle(
-    fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFF00164E));
+
+const titleTS = TextStyle(fontSize: 25, fontWeight: FontWeight.w600);
 //const kOnNickName = TextStyle()
 
 const kHeaderTS = TextStyle(
     fontSize: 22, fontWeight: FontWeight.w700, color: kOnSurfaceTextColor);
 
-const kDetailsTS = TextStyle(fontSize: 12);
+const detailsTS = TextStyle(fontSize: 16, fontWeight: FontWeight.w100);
 
 TextStyle cardTitleTs(context) => TextStyle(
     color: UIParameters.isDarkMode(context)

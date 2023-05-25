@@ -1,0 +1,124 @@
+{
+    "id": "pkt005",
+    "title": "Electronic Health Record",
+    "image_url": "",
+    "Description": "Soal pengetahuan Medical Diagnostic Test",
+    "time_seconds": 900,
+    "questions": [
+        {
+            "id": "pkt005q001",
+            "question": "Apa tujuan dari EHR?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": " Untuk membuat jaringan sosial online bagi penyedia layanan kesehatan"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Untuk mengumpulkan, menyimpan, dan mengelola informasi kesehatan pasien"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Untuk melacak tingkat kebugaran fisik pasien"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "  Untuk membuat sistem resep elektronik"
+                }
+            ],
+            "correct_answer": "B"
+        },
+        {
+            "id": "pkt005q002",
+            "question": "Fitur paling penting dari EHR adalah?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Antarmuka pengguna yang berwarna-warni"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Kemampuan untuk mencatat demografi pasien"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Integrasi dengan aplikasi pihak ketiga"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Penjadwalan janji otomatis"
+                }
+            ],
+            "correct_answer": "D"
+        },
+        {
+            "id": "pkt005q003",
+            "question": "Yang mana dari berikut bukan merupakan manfaat menggunakan EHR?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Peningkatan perawatan dan keamanan pasien"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Diagnosis dan pengobatan yang lebih akurat"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Peningkatan waktu tunggu pasien"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Komunikasi yang lebih baik antara penyedia layanan kesehatan"
+                }
+            ],
+            "correct_answer": "C"
+        },
+        {
+            "id": "pkt005q004",
+            "question": "Tantangan utama apa yang terkait dengan implementasi EHR?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": "Biaya implementasi yang tinggi"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": "Kesulitan dalam mencari staf yang berkualifikasi untuk mengelola EHR"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Kapasitas penyimpanan yang terbatas"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Akses terbatas ke internet"
+                }
+            ],
+            "correct_answer": "A"
+        },
+        {
+            "id": "pkt0045005",
+            "question": "Badan pemerintah mana di Indonesia yang bertanggung jawab untuk mempromosikan adopsi dan penggunaan EHR yang bermakna?",
+            "answers": [
+                {
+                    "identifier": "A",
+                    "Answer": " Institut Kesehatan Nasional (NIH)"
+                },
+                {
+                    "identifier": "B",
+                    "Answer": " Administrasi Makanan dan Obat-obatan (FDA)"
+                },
+                {
+                    "identifier": "C",
+                    "Answer": "Pusat Pengendalian dan Pencegahan Penyakit (CDC)"
+                },
+                {
+                    "identifier": "D",
+                    "Answer": "Kementerian Kesehatan Republik Indonesia (Kemenkes RI)"
+                }
+            ],
+            "correct_answer": "D"
+        }
+    ]
+}

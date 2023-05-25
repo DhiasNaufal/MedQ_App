@@ -151,7 +151,10 @@ class QuizPaperCard extends GetView<QuizPaperController> {
                             vertical: 8, horizontal: 15),
                         child: Column(
                           children: [
-                            const Icon(AppIcons.trophyoutline),
+                            const Icon(
+                              AppIcons.trophyoutline,
+                              color: Colors.white,
+                            ),
                             SizedBox(
                               height: 2,
                             ),

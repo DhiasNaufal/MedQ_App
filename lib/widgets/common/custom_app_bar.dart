@@ -12,8 +12,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leading,
     this.titleWidget,
     this.onMenuActionTap,
+    this.backColor,
   }) : super(key: key);
-
+  final Color? backColor;
   final String title;
   final Widget? titleWidget;
   final bool showActionIcon;
@@ -41,14 +42,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   leading ??
                       Transform.translate(
                           offset: const Offset(-14, 0),
-                          child:
-                              const BackButton()), // transform to allign icons with body content
+                          child: BackButton(
+                            color: backColor,
+                          )), // transform to allign icons with body content
                   if (showActionIcon)
                     Transform.translate(
                       offset: const Offset(10,
                           0), // transform to allign icons with body content =>  - CircularButton.padding
                       child: CircularButton(
-                        child: const Icon(AppIcons.menu),
+                        child: Icon(
+                          AppIcons.menu,
+                          color: backColor,
+                        ),
                         onTap: onMenuActionTap ??
                             () {
                               Get.toNamed(QuizOverviewScreen.routeName);
