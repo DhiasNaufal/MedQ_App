@@ -56,10 +56,11 @@ class LoginScreen extends GetView<AuthController> {
               children: [
                 Text(
                   "Let's Get Started",
-                  style: TextStyle(color: accentColor(context), fontSize: 24),
+                  style: TextStyle(
+                      color: Theme.of(context).primaryColor, fontSize: 24),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Padding(
@@ -101,7 +102,7 @@ class LoginScreen extends GetView<AuthController> {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: UIParameters.getWidth(context) * 0.1),
-                  child: Text(
+                  child: const Text(
                     "By continuing you agreeing to our privacy policy and to follow our rules, and you are over it",
                     style: TextStyle(fontSize: 12),
                     textAlign: TextAlign.center,

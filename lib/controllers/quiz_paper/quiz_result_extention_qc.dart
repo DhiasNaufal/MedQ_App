@@ -14,21 +14,24 @@ extension QuizeResult on QuizController {
   }
 
   String get points {
-    var points = (correctQuestionCount / allQuestions.length) *
-        100 *
-        (quizPaperModel.timeSeconds - remainSeconds) /
-        quizPaperModel.timeSeconds *
-        100;
+    var points = (remainSeconds / quizPaperModel.timeSeconds) *
+        (correctQuestionCount * 100);
     return points.toStringAsFixed(2);
   }
 
+  // String get totalPoints {
+  //   var totalPoints = 5;
+  //   return totalPoints.toString();
+  // }
+
   Future<void> saveQuizResults() async {
+    
     var batch = fi.batch();
-    User? _user = Get.find<AuthController>().getUser();
-    if (_user == null) return;
+    User? user = Get.find<AuthController>().getUser();
+    if (user == null) return;
     batch.set(
         userFR
-            .doc(_user.email)
+            .doc(user.email)
             .collection('myrecent_quizes')
             .doc(quizPaperModel.id),
         {
@@ -37,16 +40,17 @@ extension QuizeResult on QuizController {
           "paper_id": quizPaperModel.id,
           "time": quizPaperModel.timeSeconds - remainSeconds
         });
+    batch.update(userFR.doc(user.email), {"totalScore": points});
     batch.set(
         leaderBoardFR
             .doc(quizPaperModel.id)
             .collection('scores')
-            .doc(_user.email),
+            .doc(user.email),
         {
           "points": double.parse(points),
           "correct_count": '$correctQuestionCount/${allQuestions.length}',
           "paper_id": quizPaperModel.id,
-          "user_id": _user.email,
+          "user_id": user.email,
           "time": quizPaperModel.timeSeconds - remainSeconds
         });
     await batch.commit();

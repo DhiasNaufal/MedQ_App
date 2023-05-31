@@ -7,6 +7,8 @@ import 'package:cdss_quiz/controllers/controllers.dart';
 
 class OnBoardingScreen extends GetView<OnBoardingController> {
   static const String routeName = '/boarding';
+
+  const OnBoardingScreen({super.key});
   //final _controller = OnboardingController();
   @override
   Widget build(BuildContext context) {
@@ -35,11 +37,11 @@ class OnBoardingScreen extends GetView<OnBoardingController> {
                             height: UIParameters.getHeight(context) * 0.21,
                           ),
                         ),
-                        SizedBox(height: 42),
+                        const SizedBox(height: 42),
                         Text(controller.onboardingPages[index].title,
-                            style:
-                                titleTS.copyWith(color: accentColor(context))),
-                        SizedBox(height: 32),
+                            style: titleTS.copyWith(
+                                color: Theme.of(context).primaryColor)),
+                        const SizedBox(height: 32),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 64.0),
                           child: Text(
@@ -68,9 +70,10 @@ class OnBoardingScreen extends GetView<OnBoardingController> {
                           width: 7,
                           height: 8,
                           decoration: BoxDecoration(
-                            border: Border.all(color: accentColor(context)),
+                            border: Border.all(
+                                color: Theme.of(context).primaryColor),
                             color: controller.selectedPageIndex.value == index
-                                ? accentColor(context)
+                                ? Theme.of(context).primaryColor
                                 : Theme.of(context).scaffoldBackgroundColor,
                             shape: BoxShape.circle,
                           ),
@@ -78,7 +81,7 @@ class OnBoardingScreen extends GetView<OnBoardingController> {
                       }),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                 ],
@@ -98,6 +101,9 @@ class OnBoardingScreen extends GetView<OnBoardingController> {
                                     UIParameters.getHeight(context) * 0.1),
                             child: Center(
                                 child: MainButton(
+                              color: Theme.of(context).primaryColor,
+                              onTap: (() => controller.forwardAction()),
+                              border: Theme.of(context).primaryColor,
                               child: Center(
                                   child: Text(
                                 "Let's get this done! shall we?",
@@ -105,9 +111,6 @@ class OnBoardingScreen extends GetView<OnBoardingController> {
                                     color: customHomeBackgroundColor(context),
                                     fontWeight: FontWeight.bold),
                               )),
-                              color: accentColor(context),
-                              onTap: (() => controller.forwardAction()),
-                              border: accentColor(context),
                             )),
                           )
                         : Padding(
@@ -119,7 +122,8 @@ class OnBoardingScreen extends GetView<OnBoardingController> {
                               children: [
                                 FloatingActionButton(
                                     elevation: 0,
-                                    backgroundColor: accentColor(context),
+                                    backgroundColor:
+                                        Theme.of(context).primaryColor,
                                     onPressed: controller.forwardAction,
                                     child: Icon(
                                       Icons.arrow_forward_ios,

@@ -15,27 +15,26 @@ class QuizeScreen extends GetView<QuizController> {
     return WillPopScope(
       onWillPop: controller.onExitOfQuiz,
       child: Scaffold(
-
           //backgroundColor: customQuizBackgroundColor(context),
           extendBodyBehindAppBar: true,
           appBar: CustomAppBar(
             backColor: Colors.white,
             leading: Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              child: Obx(
-                () => CountdownTimer(
-                  time: controller.time.value,
-                  color: cardColorDT,
-                ),
-              ),
               decoration: BoxDecoration(
                   color: kSecondaryColor,
                   borderRadius: BorderRadius.circular(5)),
+              child: Obx(
+                () => CountdownTimer(
+                  time: controller.time.value,
+                  color: tertiaryColorDT,
+                ),
+              ),
             ),
             showActionIcon: true,
             titleWidget: Obx(() => Text(
-                  'Q. ${(controller.questionIndex.value + 1).toString().padLeft(2, '0')}',
-                  style: kAppBarTS,
+                  'Q ${(controller.questionIndex.value + 1).toString().padLeft(2, '0')}',
+                  style: kAppBarTS.copyWith(color: Colors.white),
                 )),
           ),
           body: BackgroundDecoration(
@@ -46,7 +45,7 @@ class QuizeScreen extends GetView<QuizController> {
                     Expanded(
                         child: ContentArea(
                             color: customContentQuizColor(context),
-                            child: QuizScreenPlaceHolder())),
+                            child: const QuizScreenPlaceHolder())),
                   if (controller.loadingStatus.value == LoadingStatus.completed)
                     Expanded(
                       child: ContentArea(
@@ -55,7 +54,7 @@ class QuizeScreen extends GetView<QuizController> {
                           children: [
                             Text(
                               controller.currentQuestion.value!.question,
-                              style: kQuizeTS,
+                              style: kQuizeTS.copyWith(color: tertiaryColorDT),
                               textAlign: TextAlign.center,
                             ),
                             Expanded(
@@ -97,7 +96,7 @@ class QuizeScreen extends GetView<QuizController> {
                                   }),
                             ),
                             Padding(
-                              padding: EdgeInsets.symmetric(vertical: 40),
+                              padding: const EdgeInsets.symmetric(vertical: 40),
                               child: Row(
                                 children: [
                                   Visibility(
@@ -109,16 +108,15 @@ class QuizeScreen extends GetView<QuizController> {
                                         height: 55,
                                         width: 55,
                                         child: MainButton(
-                                          color: customPrimaryButton(context),
+                                          color:
+                                              customContentQuizColor(context),
                                           onTap: () {
                                             controller.prevQuestion();
                                           },
-                                          border:
-                                              Theme.of(context).primaryColor,
+                                          border: customPrimaryButton(context),
                                           child: Icon(
                                             Icons.arrow_back_ios_new,
-                                            color:
-                                                customContentHomeColor(context),
+                                            color: customPrimaryButton(context),
                                           ),
                                         ),
                                       ),
@@ -141,8 +139,7 @@ class QuizeScreen extends GetView<QuizController> {
                                           title: controller.islastQuestion
                                               ? 'Complete'
                                               : 'Next',
-                                          border:
-                                              Theme.of(context).primaryColor,
+                                          border: customPrimaryButton(context),
                                         ),
                                       ),
                                     ),
@@ -154,51 +151,6 @@ class QuizeScreen extends GetView<QuizController> {
                         ),
                       ),
                     ),
-                  // ColoredBox(
-                  //   color: kLighterPrimaryColor,
-                  //   child: Padding(
-                  //     padding: UIParameters.screenPadding,
-                  //     child: Row(
-                  //       children: [
-                  //         Visibility(
-                  //           visible: controller.isFirstQuestion,
-                  //           child: Padding(
-                  //             padding: const EdgeInsets.only(right: 5.0),
-                  //             child: SizedBox(
-                  //               height: 55,
-                  //               width: 55,
-                  //               child: MainButton(
-                  //                 onTap: () {
-                  //                   controller.prevQuestion();
-                  //                 },
-                  //                 child: const Icon(Icons.arrow_back_ios_new),
-                  //               ),
-                  //             ),
-                  //           ),
-                  //         ),
-                  //         Expanded(
-                  //           child: Obx(
-                  //             () => Visibility(
-                  //               visible: controller.loadingStatus.value ==
-                  //                   LoadingStatus.completed,
-                  //               child: MainButton(
-                  //                 onTap: () {
-                  //                   controller.islastQuestion
-                  //                       ? Get.toNamed(
-                  //                           QuizOverviewScreen.routeName)
-                  //                       : controller.nextQuestion();
-                  //                 },
-                  //                 title: controller.islastQuestion
-                  //                     ? 'Complete'
-                  //                     : 'Next',
-                  //               ),
-                  //             ),
-                  //           ),
-                  //         )
-                  //       ],
-                  //     ),
-                  //   ),
-                  // )
                 ],
               ),
             ),

@@ -13,10 +13,10 @@ class Dialogs {
   static Widget quizStartDialog({required VoidCallback onTap}) {
     return AlertDialog(
       // title: const Text("Hi.."),
-      content: Column(
+      content: const Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Text(
             "Hi..",
             style: TextStyle(
@@ -43,16 +43,42 @@ class Dialogs {
                 'Do you want to exit the quiz without completing it ?'),
             actions: <Widget>[
               TextButton(
-                onPressed: () => Get.back(result: false),
-                child: const Text('No'),
+                onPressed: () => Get.back(result: true),
+                child: Text(
+                  'bang udah bang',
+                  style: TextStyle(color: Theme.of(context).primaryColor),
+                ),
               ),
               TextButton(
-                onPressed: () => Get.back(result: true),
-                child: const Text('Yes'),
+                onPressed: () => Get.back(result: false),
+                child: Text('No',
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                    )),
               ),
             ],
           ),
         )) ??
         false;
+  }
+
+  static Future startDialog({required VoidCallback onTap}) {
+    return showDialog(
+      context: Get.overlayContext!,
+      builder: (context) => AlertDialog(
+        title: const Text('Are you sure?'),
+        content:
+            const Text('Do you want to exit the quiz without completing it ?'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Get.back(result: true),
+            child: const Text(
+              'Wait',
+            ),
+          ),
+          TextButton(onPressed: onTap, child: const Text("Let's go")),
+        ],
+      ),
+    );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:cdss_quiz/configs/configs.dart';
-import 'package:cdss_quiz/controllers/common/drawer_controller.dart';
 import 'package:cdss_quiz/controllers/controllers.dart';
 import 'package:cdss_quiz/screens/home/custom_drawer.dart';
 import 'package:cdss_quiz/widgets/widgets.dart';
@@ -15,7 +14,7 @@ class HomeScreen extends GetView<MyDrawerController> {
 
   @override
   Widget build(BuildContext context) {
-    QuizPaperController _quizePprContoller = Get.find();
+    QuizPaperController quizePprContoller = Get.find();
     return Scaffold(
       body: GetBuilder<MyDrawerController>(
         builder: (_) => ZoomDrawer(
@@ -25,12 +24,9 @@ class HomeScreen extends GetView<MyDrawerController> {
           angle: 0.0,
           menuScreen: const CustomDrawer(),
           style: DrawerStyle.DefaultStyle,
-          //backgroundColor: Colors.black,
-          slideWidth: MediaQuery.of(context).size.width * 0.6,
+          slideWidth: MediaQuery.of(context).size.width * 0.55,
           mainScreen: Container(
             decoration: BoxDecoration(
-                //   gradient: mainGradient(context),
-                // ),
                 color: Theme.of(context)
                     .scaffoldBackgroundColor), //gradient: mainGradient(context)),
             child: SafeArea(
@@ -53,7 +49,7 @@ class HomeScreen extends GetView<MyDrawerController> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Padding(
                             padding: const EdgeInsets.symmetric(
                               vertical: 10,
@@ -63,11 +59,11 @@ class HomeScreen extends GetView<MyDrawerController> {
                                 //const Icon(AppIcons.peace),
                                 Builder(
                                   builder: (_) {
-                                    final AuthController _auth = Get.find();
-                                    final user = _auth.getUser();
-                                    String _label = 'Mate';
+                                    final AuthController auth = Get.find();
+                                    final user = auth.getUser();
+                                    String label = 'Mate';
                                     if (user != null) {
-                                      _label = '${user.displayName}';
+                                      label = '${user.displayName}';
                                     }
                                     return Column(
                                       crossAxisAlignment:
@@ -78,10 +74,10 @@ class HomeScreen extends GetView<MyDrawerController> {
                                                 color:
                                                     customOnHomeBackgroundColor(
                                                         context))),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 4,
                                         ),
-                                        Text(_label,
+                                        Text(label,
                                             style: kHomeHeader.copyWith(
                                                 color: Theme.of(context)
                                                     .primaryColor,
@@ -102,7 +98,7 @@ class HomeScreen extends GetView<MyDrawerController> {
                     //       style: kTitlePrimary.copyWith(
                     //           color: customContentHomeColor(context))),
                     // ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Expanded(
@@ -122,16 +118,16 @@ class HomeScreen extends GetView<MyDrawerController> {
                                   .primaryColor
                                   .withOpacity(0.5),
                               onRefresh: () async {
-                                _quizePprContoller.getAllPapers();
+                                quizePprContoller.getAllPapers();
                               },
                               child: ListView.separated(
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 20),
                                 shrinkWrap: true,
-                                itemCount: _quizePprContoller.allPapers.length,
+                                itemCount: quizePprContoller.allPapers.length,
                                 itemBuilder: (BuildContext context, int index) {
                                   return QuizPaperCard(
-                                    model: _quizePprContoller.allPapers[index],
+                                    model: quizePprContoller.allPapers[index],
                                   );
                                 },
                                 separatorBuilder:

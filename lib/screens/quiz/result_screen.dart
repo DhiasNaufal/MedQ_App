@@ -13,10 +13,6 @@ class Resultcreen extends GetView<QuizController> {
 
   @override
   Widget build(BuildContext context) {
-    final Color _textColor = UIParameters.isDarkMode(context)
-        ? Colors.white
-        : Theme.of(context).primaryColor;
-
     return WillPopScope(
       onWillPop: () async {
         return false;
@@ -29,7 +25,10 @@ class Resultcreen extends GetView<QuizController> {
                 leading: const SizedBox(
                   height: kToolbarHeight,
                 ),
-                title: controller.correctAnsweredQuestions,
+                titleWidget: Text(
+                  '${(controller.correctAnsweredQuestions)}',
+                  style: kAppBarTS.copyWith(color: Colors.white),
+                ),
               ),
               Expanded(
                 child: ContentArea(
@@ -37,7 +36,10 @@ class Resultcreen extends GetView<QuizController> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        //SvgPicture.asset('assets/images/bulb.svg'),
+                        SvgPicture.asset(
+                          'assets/images/certification.svg',
+                          height: UIParameters.getHeight(context) * 0.2,
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(top: 20, bottom: 5),
                           child: Text(
@@ -48,13 +50,14 @@ class Resultcreen extends GetView<QuizController> {
                         ),
                         Text(
                           'You have got ${controller.points} Points',
-                          style: TextStyle(color: _textColor),
+                          style: TextStyle(color: customQuizAction(context)),
                         ),
                         const SizedBox(
                           height: 25,
                         ),
-                        const Text(
+                        Text(
                           'Tap below question numbers to view correct answers',
+                          style: detailsTS.copyWith(color: Colors.black),
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(
@@ -74,28 +77,27 @@ class Resultcreen extends GetView<QuizController> {
                                         mainAxisSpacing: 8),
                                 physics: const BouncingScrollPhysics(),
                                 itemBuilder: (_, index) {
-                                  final _question =
+                                  final question =
                                       controller.allQuestions[index];
 
-                                  AnswerStatus _status =
+                                  AnswerStatus status =
                                       AnswerStatus.notanswered;
 
-                                  final _selectedAnswer =
-                                      _question.selectedAnswer;
-                                  final _correctAnswer =
-                                      _question.correctAnswer;
+                                  final selectedAnswer =
+                                      question.selectedAnswer;
+                                  final correctAnswer = question.correctAnswer;
 
-                                  if (_selectedAnswer == _correctAnswer) {
-                                    _status = AnswerStatus.correct;
-                                  } else if (_question.selectedAnswer == null) {
-                                    _status = AnswerStatus.wrong;
+                                  if (selectedAnswer == correctAnswer) {
+                                    status = AnswerStatus.correct;
+                                  } else if (question.selectedAnswer == null) {
+                                    status = AnswerStatus.wrong;
                                   } else {
-                                    _status = AnswerStatus.wrong;
+                                    status = AnswerStatus.wrong;
                                   }
 
                                   return QuizNumberCard(
                                     index: index + 1,
-                                    status: _status,
+                                    status: status,
                                     onTap: () {
                                       controller.jumpToQuestion(index,
                                           isGoBack: false);
@@ -104,7 +106,7 @@ class Resultcreen extends GetView<QuizController> {
                                   );
                                 })),
                         Padding(
-                            padding: EdgeInsets.symmetric(vertical: 40),
+                            padding: const EdgeInsets.symmetric(vertical: 40),
                             child: Row(
                               children: [
                                 Expanded(
@@ -138,33 +140,6 @@ class Resultcreen extends GetView<QuizController> {
                       ],
                     )),
               ),
-              // ColoredBox(
-              //   color: kLighterPrimaryColor,
-              //   child: Padding(
-              //       padding: UIParameters.screenPadding,
-              //       child: Row(
-              //         children: [
-              //           Expanded(
-              //               child: MainButton(
-              //             color: kSecondaryColor,
-              //             onTap: () {
-              //               controller.tryAgain();
-              //             },
-              //             title: 'Try Again',
-              //           )),
-              //           const SizedBox(
-              //             width: 5,
-              //           ),
-              //           Expanded(
-              //               child: MainButton(
-              //             onTap: () {
-              //               controller.saveQuizResults();
-              //             },
-              //             title: 'Go to home',
-              //           ))
-              //         ],
-              //       )),
-              // )
             ],
           ),
         ),

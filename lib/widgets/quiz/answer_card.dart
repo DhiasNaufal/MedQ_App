@@ -21,19 +21,19 @@ class AnswerCard extends StatelessWidget {
       borderRadius: UIParameters.cardBorderRadius,
       onTap: onTap,
       child: Ink(
-        child: Text(
-          answer,
-          style: TextStyle(
-              color: isSelected ? kOnSurfaceTextColor : Color(0xFF00164E)),
-        ),
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         decoration: BoxDecoration(
             borderRadius: UIParameters.cardBorderRadius,
             color: isSelected ? customQuizAction(context) : Colors.white,
             border: Border.all(
                 color: isSelected
-                    ? answerSelectedColor(context)
+                    ? customQuizAction(context)
                     : answerBorderColor(context))),
+        child: Text(
+          answer,
+          style: TextStyle(
+              color: isSelected ? kOnSurfaceTextColor : tertiaryColorDT),
+        ),
       ),
     );
   }
@@ -50,15 +50,15 @@ class CorrectAnswerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Ink(
-      child: Text(
-        answer,
-        style: const TextStyle(
-            color: Color(0xFF00164E), fontWeight: FontWeight.bold),
-      ),
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       decoration: BoxDecoration(
         borderRadius: UIParameters.cardBorderRadius,
-        color: kCorrectAnswerColor.withOpacity(0.8),
+        color: kCorrectAnswerColor.withOpacity(0.5),
+      ),
+      child: Text(
+        answer,
+        style: TextStyle(
+            color: customQuizAction(context), fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -75,15 +75,15 @@ class WrongAnswerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Ink(
-      child: Text(
-        answer,
-        style: const TextStyle(
-            color: Color(0xFF00164E), fontWeight: FontWeight.bold),
-      ),
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       decoration: BoxDecoration(
         borderRadius: UIParameters.cardBorderRadius,
-        color: kWrongAnswerColor.withOpacity(0.8),
+        color: kWrongAnswerColor.withOpacity(0.5),
+      ),
+      child: Text(
+        answer,
+        style: const TextStyle(
+            color: kWrongAnswerColor, fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -100,15 +100,15 @@ class NotAnswerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Ink(
-      child: Text(
-        answer,
-        style: const TextStyle(
-            color: kNotAnswerColor, fontWeight: FontWeight.bold),
-      ),
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       decoration: BoxDecoration(
         borderRadius: UIParameters.cardBorderRadius,
         color: kNotAnswerColor.withOpacity(0.1),
+      ),
+      child: Text(
+        answer,
+        style: const TextStyle(
+            color: kNotAnswerColor, fontWeight: FontWeight.bold),
       ),
     );
   }

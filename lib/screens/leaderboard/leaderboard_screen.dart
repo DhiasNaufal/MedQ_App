@@ -38,7 +38,7 @@ class LeaderBoardScreen extends GetView<LeaderBoardController> {
                 ? ContentArea(
                     color: customContentQuizColor(context),
                     addPadding: true,
-                    child: LeaderBoardPlaceHolder(),
+                    child: const LeaderBoardPlaceHolder(),
                   )
                 : ContentArea(
                     color: customContentQuizColor(context),
@@ -84,7 +84,7 @@ class LeaderBoardCard extends StatelessWidget {
       //     ),
       title: Text(
         data.user.name,
-        style: TextStyle(
+        style: const TextStyle(
             color: Color(0xFF00164E), fontWeight: FontWeight.bold), //tsStyle
       ),
       subtitle: EasySeparatedRow(
@@ -128,7 +128,7 @@ class LeaderBoardCard extends StatelessWidget {
         ],
       ),
       trailing: Text(
-        '#' + '${index + 1}'.padLeft(2, "0"),
+        '#${'${index + 1}'.padLeft(2, "0")}',
         style: tsStyle,
       ),
     );

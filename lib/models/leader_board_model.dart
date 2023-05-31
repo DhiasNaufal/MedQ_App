@@ -5,8 +5,9 @@ class LeaderBoardData {
   final String? userId;
   final int? time;
   final String? paperId;
-  final double? points;
+  late final double? points;
   late UserData user;
+  late final double? totalPoints;
 
   LeaderBoardData({
     this.correctCount,
@@ -14,6 +15,7 @@ class LeaderBoardData {
     this.time,
     this.paperId,
     this.points,
+    this.totalPoints,
   });
 
   LeaderBoardData.fromJson(Map<String, dynamic> json)

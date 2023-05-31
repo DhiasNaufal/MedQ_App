@@ -50,15 +50,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       offset: const Offset(10,
                           0), // transform to allign icons with body content =>  - CircularButton.padding
                       child: CircularButton(
-                        child: Icon(
-                          AppIcons.menu,
-                          color: backColor,
-                        ),
                         onTap: onMenuActionTap ??
                             () {
                               Get.toNamed(QuizOverviewScreen.routeName);
                             },
                         material: MaterialType.transparency,
+                        child: Icon(
+                          AppIcons.menu,
+                          color: backColor,
+                        ),
                       ),
                     )
                 ],

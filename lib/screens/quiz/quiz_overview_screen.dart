@@ -15,7 +15,10 @@ class QuizOverviewScreen extends GetView<QuizController> {
       extendBodyBehindAppBar: true,
       appBar: CustomAppBar(
         backColor: Colors.white,
-        title: controller.completedQuiz,
+        titleWidget: Text(
+          '${controller.completedQuiz}',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: BackgroundDecoration(
         child: Column(
@@ -29,7 +32,7 @@ class QuizOverviewScreen extends GetView<QuizController> {
                         children: [
                           CountdownTimer(
                             color: UIParameters.isDarkMode(context)
-                                ? Theme.of(context).textTheme.bodyText1!.color
+                                ? Theme.of(context).textTheme.bodyLarge!.color
                                 : Theme.of(context).primaryColor,
                             time: '',
                           ),
@@ -57,24 +60,24 @@ class QuizOverviewScreen extends GetView<QuizController> {
                                       mainAxisSpacing: 8),
                               physics: const BouncingScrollPhysics(),
                               itemBuilder: (_, index) {
-                                AnswerStatus? _answerStatus;
+                                AnswerStatus? answerStatus;
                                 if (controller
                                         .allQuestions[index].selectedAnswer !=
                                     null) {
-                                  _answerStatus = AnswerStatus.answered;
+                                  answerStatus = AnswerStatus.answered;
                                 }
                                 return QuizNumberCard(
                                   index: index + 1,
-                                  status: _answerStatus,
+                                  status: answerStatus,
                                   onTap: () {
                                     controller.jumpToQuestion(index);
                                   },
                                 );
                               })),
                       Padding(
-                        padding: EdgeInsets.symmetric(vertical: 40),
+                        padding: const EdgeInsets.symmetric(vertical: 40),
                         child: MainButton(
-                          color: customContentHomeColor(context),
+                          color: customPrimaryButton(context),
                           onTap: () {
                             controller.complete();
                           },

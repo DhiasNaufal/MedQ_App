@@ -8,8 +8,6 @@ import 'package:cdss_quiz/widgets/widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
-import 'quiz_papers_controller.dart';
-
 class QuizController extends GetxController {
   final loadingStatus = LoadingStatus.loading.obs;
   final allQuestions = <Question>[];
@@ -20,8 +18,8 @@ class QuizController extends GetxController {
 
   @override
   void onReady() {
-    final _quizePaprer = Get.arguments as QuizPaperModel;
-    loadData(_quizePaprer);
+    final quizePaprer = Get.arguments as QuizPaperModel;
+    loadData(quizePaprer);
     super.onReady();
   }
 
@@ -29,6 +27,7 @@ class QuizController extends GetxController {
   void onClose() {
     if (_timer != null) {
       _timer!.cancel();
+      Get.offAndToNamed(Resultcreen.routeName);
     }
     super.onClose();
   }
@@ -48,9 +47,8 @@ class QuizController extends GetxController {
         } else {
           int minutes = remainSeconds ~/ 60;
           int seconds = (remainSeconds % 60);
-          time.value = minutes.toString().padLeft(2, "0") +
-              ":" +
-              seconds.toString().padLeft(2, "0");
+          time.value =
+              "${minutes.toString().padLeft(2, "0")}:${seconds.toString().padLeft(2, "0")}";
           remainSeconds--;
         }
       },
@@ -86,9 +84,9 @@ class QuizController extends GetxController {
         caseSensitive: false,
       );
       if (e.toString().contains(exp)) {
-        AuthController _authController = Get.find();
+        AuthController authController = Get.find();
         Get.back();
-        _authController.showLoginAlertDialog();
+        authController.showLoginAlertDialog();
       }
       AppLogger.e(e);
       loadingStatus.value = LoadingStatus.error;

@@ -15,9 +15,10 @@ class AnswersCheckScreen extends GetView<QuizController> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: CustomAppBar(
+        backColor: Colors.white,
         titleWidget: Obx(() => Text(
               'Q. ${(controller.questionIndex.value + 1).toString().padLeft(2, '0')}',
-              style: kAppBarTS,
+              style: kAppBarTS.copyWith(color: Colors.white),
             )),
         showActionIcon: true,
         onMenuActionTap: () {
@@ -37,7 +38,7 @@ class AnswersCheckScreen extends GetView<QuizController> {
                       children: [
                         Text(
                           controller.currentQuestion.value!.question,
-                          style: kQuizeTS,
+                          style: kQuizeTS.copyWith(color: tertiaryColorDT),
                         ),
                         GetBuilder<QuizController>(
                             id: 'answers_review_list',
@@ -94,7 +95,7 @@ class AnswersCheckScreen extends GetView<QuizController> {
                 ),
               ),
               ColoredBox(
-                color: Theme.of(context).scaffoldBackgroundColor,
+                color: customContentQuizColor(context),
                 child: Padding(
                   padding: UIParameters.screenPadding,
                   child: Row(
@@ -103,11 +104,13 @@ class AnswersCheckScreen extends GetView<QuizController> {
                         height: 55,
                         width: 55,
                         child: MainButton(
+                          color: customContentQuizColor(context),
                           onTap: () {
                             controller.prevQuestion();
                           },
                           border: customPrimaryButton(context),
-                          child: const Icon(Icons.arrow_back_ios_new),
+                          child: Icon(Icons.arrow_back_ios_new,
+                              color: customPrimaryButton(context)),
                         ),
                       ),
                       const SizedBox(

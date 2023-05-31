@@ -39,45 +39,58 @@ class CustomDrawer extends GetView<MyDrawerController> {
                       ? TextButton.icon(
                           icon: const Icon(Icons.login_rounded),
                           style: TextButton.styleFrom(
+                              foregroundColor: Colors.white,
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10, horizontal: 15),
                               elevation: 0,
-                              backgroundColor: Colors.white.withOpacity(0.5),
-                              primary: Colors.white),
+                              backgroundColor: Colors.white.withOpacity(0.5)),
                           onPressed: () {
                             controller.signIn();
                           },
                           label: const Text("Sign in"))
-                      : GestureDetector(
-                          onTap: () {
-                            //Get.toNamed(ProfileScreen.routeName);
-                          },
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 12, bottom: 10),
-                              child: CircleAvatar(
-                                foregroundImage:
-                                    controller.user.value!.photoURL == null
-                                        ? null
-                                        : NetworkImage(
-                                            controller.user.value!.photoURL!),
-                                backgroundColor: Colors.white,
-                                radius: 40,
+                      : Stack(children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: UIParameters.getHeight(context) * 0.055),
+                            child: Container(
+                              height: UIParameters.getHeight(context) * 0.13,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.white,
                               ),
                             ),
                           ),
-                        )),
+                          GestureDetector(
+                            onTap: () {
+                              //Get.toNamed(ProfileScreen.routeName);
+                            },
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 12, bottom: 10),
+                              child: Center(
+                                child: CircleAvatar(
+                                  foregroundImage:
+                                      controller.user.value!.photoURL == null
+                                          ? null
+                                          : NetworkImage(
+                                              controller.user.value!.photoURL!),
+                                  backgroundColor: Colors.white,
+                                  radius:
+                                      UIParameters.getHeight(context) * 0.04,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ])),
                   const Spacer(flex: 1),
                   _DrawerButton(
-                      onPressed: () => null, //controller.github(),
+                      onPressed: () {}, //controller.github(),
                       icon: AppIcons.github,
                       label: 'GitHub'),
                   _DrawerButton(
                     icon: Icons.code,
                     label: 'Source Code',
-                    onPressed: () => null, //controller.downloadSourceCode(),
+                    onPressed: () {}, //controller.downloadSourceCode(),
                   ),
                   _DrawerButton(
                       icon: AppIcons.contact,

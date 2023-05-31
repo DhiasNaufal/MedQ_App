@@ -13,8 +13,9 @@ class OnBoardingController extends GetxController {
     if (isLastPage) {
       Get.offAndToNamed(HomeScreen.routeName);
       //go to home page
-    } else
+    } else {
       pageController.nextPage(duration: 300.milliseconds, curve: Curves.ease);
+    }
   }
 
   List<OnboardingInfo> onboardingPages = [

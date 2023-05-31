@@ -1,17 +1,23 @@
 import 'package:cdss_quiz/configs/configs.dart';
 import 'package:flutter/material.dart';
 
-const Color primaryColorDT = Color(0xFF53DBC9); //Color(0xFFCCE8E2);
+const Color primaryColorDT = Color(0xFF53DBC9);
+const Color secondaryColorDT = Color(0xFFCCE8E2);
+const Color tertiaryColorDT = Color(0xFF1C3531);
+const Color accentColorDT = Color(0xFF334B47);
 const Color scaffoldBackgroundColorDT = Color(0xFF191C1B);
 const Color mainTextColorDT = Colors.white;
-const Color cardColorDT = Color(0xFF1C3531);
 const Color customPrimaryButtonDT = Color(0xFF334B47);
-
-const Color primaryLightColorDT = Color(0xFF5A73C4);
-const Color appBarIconColorDT = Colors.white;
-
 const Color iconColorDT = Colors.white;
 const Color shadowColorDT = Color.fromARGB(90, 172, 172, 172);
+
+const mainGradientDT = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      scaffoldBackgroundColorDT,
+      tertiaryColorDT,
+    ]);
 
 class DarkTheme with SubThemeData {
   ThemeData buildDarkTheme() {
@@ -26,6 +32,6 @@ class DarkTheme with SubThemeData {
         splashFactory: InkRipple.splashFactory,
         textTheme: getTextThemes()
             .apply(bodyColor: mainTextColorDT, displayColor: mainTextColorDT),
-        cardColor: cardColorDT);
+        cardColor: tertiaryColorDT);
   }
 }

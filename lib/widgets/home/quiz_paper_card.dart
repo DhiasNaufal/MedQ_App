@@ -15,7 +15,7 @@ class QuizPaperCard extends GetView<QuizPaperController> {
 
   @override
   Widget build(BuildContext context) {
-    const double _padding = 10.0;
+    //const double padding = 10.0;
     return Ink(
       decoration: BoxDecoration(
         boxShadow: [
@@ -23,7 +23,7 @@ class QuizPaperCard extends GetView<QuizPaperController> {
               color: Colors.black.withOpacity(0.5),
               spreadRadius: 0,
               blurRadius: 2.5,
-              offset: Offset(1, 2))
+              offset: const Offset(1, 2))
         ],
         borderRadius:
             BorderRadius.circular(25), //UIParameters.cardBorderRadius,
@@ -72,7 +72,7 @@ class QuizPaperCard extends GetView<QuizPaperController> {
                             model.title,
                             style: cardTitleTs(context),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           // SingleChildScrollView(
@@ -85,7 +85,7 @@ class QuizPaperCard extends GetView<QuizPaperController> {
                           //     ),
                           //   ),
                           // ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           FittedBox(
@@ -97,24 +97,24 @@ class QuizPaperCard extends GetView<QuizPaperController> {
                               },
                               children: [
                                 Container(
-                                  padding: EdgeInsets.all(4),
+                                  padding: const EdgeInsets.all(4),
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(5),
-                                      color: Color(0xFFFFB957)),
+                                      color: const Color(0xFFFFB957)),
                                   child: IconWithText(
-                                      icon: Icon(Icons.library_books,
+                                      icon: const Icon(Icons.library_books,
                                           color: Color(0xFF00201C)),
                                       text: Text(
                                         '${model.questionsCount} Soal ',
-                                        style:
-                                            TextStyle(color: Color(0xFF00201C)),
+                                        style: const TextStyle(
+                                            color: Color(0xFF00201C)),
                                       )),
                                 ),
                                 Container(
-                                  padding: EdgeInsets.all(4),
+                                  padding: const EdgeInsets.all(4),
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(5),
-                                      color: Color(0xFFFFB957)),
+                                      color: const Color(0xFFFFB957)),
                                   child: IconWithText(
                                       icon: const Icon(
                                         Icons.timer,
@@ -122,8 +122,8 @@ class QuizPaperCard extends GetView<QuizPaperController> {
                                       ),
                                       text: Text(
                                         model.timeInMinits(),
-                                        style:
-                                            TextStyle(color: Color(0xFF00201C)),
+                                        style: const TextStyle(
+                                            color: Color(0xFF00201C)),
                                         // style: kDetailsTS.copyWith(
                                         //     color: Colors.blueGrey),
                                       )),
@@ -149,9 +149,15 @@ class QuizPaperCard extends GetView<QuizPaperController> {
                       child: Ink(
                         padding: const EdgeInsets.symmetric(
                             vertical: 8, horizontal: 15),
-                        child: Column(
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(kCardBorderrRadius),
+                                bottomRight:
+                                    Radius.circular(kCardBorderrRadius)),
+                            color: kOnSecondaryColort),
+                        child: const Column(
                           children: [
-                            const Icon(
+                            Icon(
                               AppIcons.trophyoutline,
                               color: Colors.white,
                             ),
@@ -165,18 +171,12 @@ class QuizPaperCard extends GetView<QuizPaperController> {
                             )
                           ],
                         ),
-                        decoration: BoxDecoration(
-                            borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(kCardBorderrRadius),
-                                bottomRight:
-                                    Radius.circular(kCardBorderrRadius)),
-                            color: kOnSecondaryColort),
                       ),
                     )),
                 Container(
                   width: 18,
                   height: 18,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: kOnSecondaryColort,
                   ),

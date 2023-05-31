@@ -1,16 +1,13 @@
 import 'package:cdss_quiz/controllers/controllers.dart';
 import 'package:cdss_quiz/screens/home/custom_drawer.dart';
-import 'package:cdss_quiz/screens/intro/intro_screen.dart';
-import 'package:cdss_quiz/screens/intro/onBoarding_screen.dart';
 import 'package:cdss_quiz/screens/screens.dart';
-import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
   static List<GetPage> pages() => [
         GetPage(
           name: SplashScreen.routeName,
-          page: () => SplashScreen(),
+          page: () => const SplashScreen(),
         ),
         // GetPage(
         //   name: IntroScreen.routeName,
@@ -18,18 +15,18 @@ class AppRoutes {
         // ),
         GetPage(
             name: HomeScreen.routeName,
-            page: () => HomeScreen(),
+            page: () => const HomeScreen(),
             binding: BindingsBuilder(() {
               Get.put(MyDrawerController());
               Get.put(QuizPaperController());
             })),
         GetPage(
           name: CustomDrawer.routeName,
-          page: () => CustomDrawer(),
+          page: () => const CustomDrawer(),
         ),
-        GetPage(name: LoginScreen.routeName, page: () => LoginScreen()),
+        GetPage(name: LoginScreen.routeName, page: () => const LoginScreen()),
         GetPage(
-            page: () => QuizeScreen(),
+            page: () => const QuizeScreen(),
             name: QuizeScreen.routeName,
             binding: BindingsBuilder(() {
               Get.put<QuizController>(QuizController());
@@ -48,7 +45,7 @@ class AppRoutes {
               Get.put(LeaderBoardController());
             })),
         GetPage(
-            page: () => OnBoardingScreen(),
+            page: () => const OnBoardingScreen(),
             name: OnBoardingScreen.routeName,
             binding: BindingsBuilder(() {
               Get.put<OnBoardingController>(OnBoardingController());

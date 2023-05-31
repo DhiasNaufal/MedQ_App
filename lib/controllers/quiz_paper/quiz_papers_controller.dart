@@ -4,6 +4,7 @@ import 'package:cdss_quiz/models/models.dart';
 import 'package:cdss_quiz/screens/screens.dart';
 import 'package:cdss_quiz/utils/utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:get/get.dart';
 
 class QuizPaperController extends GetxController {
@@ -21,36 +22,35 @@ class QuizPaperController extends GetxController {
       QuerySnapshot<Map<String, dynamic>> data = await quizePaperFR.get();
       final paperList =
           data.docs.map((paper) => QuizPaperModel.fromSnapshot(paper)).toList();
-      allPapers.assignAll(paperList);
 
-      // for (var paper in paperList) {
-      //   final imageUrl =
-      //       await Get.find<FireBaseStorageService>().getImage(paper.title);
-      //   paper.imageUrl = imageUrl;
-      // }
       allPapers.assignAll(paperList);
     } catch (e) {
       AppLogger.e(e);
     }
   }
 
-  void navigatoQuestions(
+  Future<void> navigatoQuestions(
       //Get.toNamed(QuizeScreen.routeName, arguments: paper);
       {required QuizPaperModel paper,
-      bool isTryAgain = false}) {
-    AuthController _authController = Get.find();
+      bool isTryAgain = false}) async {
+    AuthController authController = Get.find();
 
-    if (_authController.isLogedIn()) {
+    if (authController.isLogedIn()) {
       if (isTryAgain) {
         Get.back();
         Get.offNamed(QuizeScreen.routeName,
-            arguments: paper, preventDuplicates: false);
+            arguments: paper, preventDuplicates: true);
       } else {
         Get.toNamed(QuizeScreen.routeName, arguments: paper);
+        // Get.dialog(await Dialogs.startDialog(
+        //   onTap: () {
+        //     Get.back();
+        //     Get.toNamed(QuizeScreen.routeName, arguments: paper);
+        //   },
+        // ));
       }
     } else {
-      //Get.toNamed(QuizeScreen.routeName, arguments: paper);
-      _authController.showLoginAlertDialog();
+      authController.showLoginAlertDialog();
     }
   }
 }

@@ -4,12 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 mixin SubThemeData {
   TextTheme getTextThemes() {
-    return GoogleFonts.montserratTextTheme(TextTheme(
-        bodyText1: TextStyle(fontWeight: FontWeight.w500),
-        bodyText2: TextStyle(fontWeight: FontWeight.w500)));
+    return GoogleFonts.montserratTextTheme(const TextTheme(
+        bodyLarge: TextStyle(fontWeight: FontWeight.w500),
+        bodyMedium: TextStyle(fontWeight: FontWeight.w500)));
   }
 
   IconThemeData getIconTheme() {
-    return IconThemeData(color: kOnSurfaceTextColor, size: 16);
+    return const IconThemeData(color: kOnSurfaceTextColor, size: 16);
   }
 }

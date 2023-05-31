@@ -15,15 +15,15 @@ class GoogleSignInButton extends StatelessWidget {
       child: Ink(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
-            color: Theme.of(context).primaryColor),
+            color: customGoogleSignInButton(context)),
         width: double.maxFinite,
         child: Padding(
-          padding: EdgeInsets.all(2),
+          padding: const EdgeInsets.all(2),
           child: Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     color: Colors.white),
@@ -32,15 +32,15 @@ class GoogleSignInButton extends StatelessWidget {
                   'assets/icons/google.svg',
                 ),
               ), // <-- Use 'Image.asset(...)' here
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Container(
-                  margin: EdgeInsets.symmetric(horizontal: 45),
+                  margin: const EdgeInsets.symmetric(horizontal: 45),
                   child: Text(
                     'Sign in with Google',
                     style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
-                        color: customsvg(context)),
+                        color: Theme.of(context).scaffoldBackgroundColor),
                   )),
             ],
           ),

@@ -1,5 +1,4 @@
 import 'package:cdss_quiz/firebase/firebase_configs.dart';
-import 'package:cdss_quiz/screens/intro/intro_screen.dart';
 import 'package:cdss_quiz/screens/screens.dart';
 import 'package:cdss_quiz/utils/utils.dart';
 import 'package:cdss_quiz/widgets/common/dialogs.dart';
@@ -35,16 +34,16 @@ class AuthController extends GetxController {
   }
 
   Future<void> siginInWithGoogle() async {
-    final GoogleSignIn _googleSignIn = GoogleSignIn();
+    final GoogleSignIn googleSignIn = GoogleSignIn();
 
     try {
-      GoogleSignInAccount? account = await _googleSignIn.signIn();
+      GoogleSignInAccount? account = await googleSignIn.signIn();
       if (account != null) {
-        final _gAuthentication = await account.authentication;
-        final _credential = GoogleAuthProvider.credential(
-            idToken: _gAuthentication.idToken,
-            accessToken: _gAuthentication.accessToken);
-        await _auth.signInWithCredential(_credential);
+        final gAuthentication = await account.authentication;
+        final credential = GoogleAuthProvider.credential(
+            idToken: gAuthentication.idToken,
+            accessToken: gAuthentication.accessToken);
+        await _auth.signInWithCredential(credential);
         await saveUser(account);
         navigateToHome();
       }
@@ -79,10 +78,6 @@ class AuthController extends GetxController {
   bool isLogedIn() {
     return _auth.currentUser != null;
   }
-
-  // void navigateToIntroduction() {
-  //   Get.offAllNamed(IntroScreen.routeName);
-  // }
 
   void navigateToOnboarding() {
     Get.offAllNamed(OnBoardingScreen.routeName);

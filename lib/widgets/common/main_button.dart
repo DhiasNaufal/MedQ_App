@@ -29,6 +29,10 @@ class MainButton extends StatelessWidget {
           onTap: enabled == false ? null : onTap,
           child: Ink(
             width: double.maxFinite,
+            decoration: BoxDecoration(
+                border: Border.all(color: border, width: 3),
+                borderRadius: BorderRadius.circular(kButtonCornerRadius),
+                color: color ?? customQuizAction(context)),
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: child ??
@@ -41,10 +45,6 @@ class MainButton extends StatelessWidget {
                     ),
                   ),
             ),
-            decoration: BoxDecoration(
-                border: Border.all(color: border, width: 2),
-                borderRadius: BorderRadius.circular(kButtonCornerRadius),
-                color: color ?? customQuizAction(context)),
           ),
         ),
       ),

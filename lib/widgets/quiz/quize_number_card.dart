@@ -16,29 +16,33 @@ class QuizNumberCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color _backgroundColor = Theme.of(context).primaryColor;
+    Color backgroundColor = Theme.of(context).primaryColor;
 
     switch (status) {
       case AnswerStatus.answered:
-        _backgroundColor = customQuizAction(context);
+        backgroundColor = customPrimaryButton(context);
         break;
       case AnswerStatus.correct:
-        _backgroundColor = kCorrectAnswerColor;
+        backgroundColor = kCorrectAnswerColor;
         break;
       case AnswerStatus.wrong:
-        _backgroundColor = kWrongAnswerColor;
+        backgroundColor = kWrongAnswerColor;
         break;
       case AnswerStatus.notanswered:
-        _backgroundColor = Theme.of(context).primaryColor.withOpacity(0.1);
+        backgroundColor = customPrimaryButton(context).withOpacity(0.1);
         break;
       default:
-        _backgroundColor = Theme.of(context).primaryColor.withOpacity(0.1);
+        backgroundColor = customPrimaryButton(context).withOpacity(0.1);
     }
 
     return InkWell(
       borderRadius: UIParameters.cardBorderRadius,
       onTap: onTap,
       child: Ink(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: UIParameters.cardBorderRadius),
         child: Center(
           child: Text(
             '$index',
@@ -48,10 +52,6 @@ class QuizNumberCard extends StatelessWidget {
                     : null),
           ),
         ),
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-            color: _backgroundColor,
-            borderRadius: UIParameters.cardBorderRadius),
       ),
     );
   }

@@ -2,7 +2,6 @@ import 'package:cdss_quiz/base/initial_binding.dart';
 import 'package:cdss_quiz/controllers/theme/theme_controller.dart';
 import 'package:cdss_quiz/firebase_options.dart';
 import 'package:cdss_quiz/routes/route.dart';
-import 'package:cdss_quiz/screens/screens.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
