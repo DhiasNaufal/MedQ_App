@@ -29,10 +29,10 @@ class QuizPaperController extends GetxController {
     }
   }
 
-  Future<void> navigatoQuestions(
+  void navigatoQuestions(
       //Get.toNamed(QuizeScreen.routeName, arguments: paper);
       {required QuizPaperModel paper,
-      bool isTryAgain = false}) async {
+      bool isTryAgain = false}) {
     AuthController authController = Get.find();
 
     if (authController.isLogedIn()) {
@@ -42,12 +42,6 @@ class QuizPaperController extends GetxController {
             arguments: paper, preventDuplicates: true);
       } else {
         Get.toNamed(QuizeScreen.routeName, arguments: paper);
-        // Get.dialog(await Dialogs.startDialog(
-        //   onTap: () {
-        //     Get.back();
-        //     Get.toNamed(QuizeScreen.routeName, arguments: paper);
-        //   },
-        // ));
       }
     } else {
       authController.showLoginAlertDialog();

@@ -16,8 +16,8 @@ class QuizOverviewScreen extends GetView<QuizController> {
       appBar: CustomAppBar(
         backColor: Colors.white,
         titleWidget: Text(
-          '${controller.completedQuiz}',
-          style: TextStyle(color: Colors.white),
+          controller.completedQuiz,
+          style: const TextStyle(color: Colors.white),
         ),
       ),
       body: BackgroundDecoration(

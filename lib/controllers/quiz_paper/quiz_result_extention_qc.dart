@@ -25,7 +25,6 @@ extension QuizeResult on QuizController {
   // }
 
   Future<void> saveQuizResults() async {
-    
     var batch = fi.batch();
     User? user = Get.find<AuthController>().getUser();
     if (user == null) return;
@@ -38,7 +37,8 @@ extension QuizeResult on QuizController {
           "points": points,
           "correct_count": '$correctQuestionCount/${allQuestions.length}',
           "paper_id": quizPaperModel.id,
-          "time": quizPaperModel.timeSeconds - remainSeconds
+          "time": quizPaperModel.timeSeconds - remainSeconds,
+          "status": true
         });
     batch.update(userFR.doc(user.email), {"totalScore": points});
     batch.set(

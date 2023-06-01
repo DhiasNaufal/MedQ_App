@@ -126,6 +126,15 @@ class HomeScreen extends GetView<MyDrawerController> {
                                 shrinkWrap: true,
                                 itemCount: quizePprContoller.allPapers.length,
                                 itemBuilder: (BuildContext context, int index) {
+                                  // if (index == 1) {
+                                  //   return IgnorePointer(
+                                  //     ignoring: true,
+                                  //     child: QuizPaperCard(
+                                  //       model:
+                                  //           quizePprContoller.allPapers[index],
+                                  //     ),
+                                  //   );
+                                  // }
                                   return QuizPaperCard(
                                     model: quizePprContoller.allPapers[index],
                                   );

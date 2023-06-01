@@ -9,7 +9,10 @@ import 'package:get/get.dart';
 import '../../models/models.dart';
 
 class QuizPaperCard extends GetView<QuizPaperController> {
-  const QuizPaperCard({Key? key, required this.model}) : super(key: key);
+  const QuizPaperCard({
+    Key? key,
+    required this.model,
+  }) : super(key: key);
 
   final QuizPaperModel model;
 

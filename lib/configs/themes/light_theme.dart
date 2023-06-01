@@ -34,6 +34,6 @@ class LightTheme with SubThemeData {
             bodyColor: mainTextColorLT, displayColor: kOnSecondaryContainer),
         cardColor: tertiaryColorLT,
         colorScheme: ColorScheme.fromSwatch(
-            accentColor: Color(0xFF006A60), primarySwatch: Colors.green));
+            accentColor: const Color(0xFF006A60), primarySwatch: Colors.green));
   }
 }

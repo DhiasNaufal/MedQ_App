@@ -3,6 +3,7 @@ import 'package:cdss_quiz/controllers/controllers.dart';
 import 'package:cdss_quiz/firebase/firebase_configs.dart';
 import 'package:cdss_quiz/models/models.dart';
 import 'package:cdss_quiz/widgets/widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_separator/easy_separator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -127,9 +128,12 @@ class LeaderBoardCard extends StatelessWidget {
           ),
         ],
       ),
-      trailing: Text(
-        '#${'${index + 1}'.padLeft(2, "0")}',
-        style: tsStyle,
+      trailing: Visibility(
+        visible: index != -1,
+        child: Text(
+          '#${'${index + 1}'.padLeft(2, "0")}',
+          style: tsStyle,
+        ),
       ),
     );
   }

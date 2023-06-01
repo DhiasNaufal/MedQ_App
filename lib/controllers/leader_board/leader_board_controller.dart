@@ -47,11 +47,11 @@ class LeaderBoardController extends GetxController {
     try {
       final DocumentSnapshot<Map<String, dynamic>> leaderBoardSnapShot =
           await getleaderBoard(paperId: paperId).doc(user.email).get();
-      final myScores = LeaderBoardData.fromSnapShot(leaderBoardSnapShot);
-      myScores.user = UserData(
+      final _myScores = LeaderBoardData.fromSnapShot(leaderBoardSnapShot);
+      _myScores.user = UserData(
         name: user.displayName!, /* image: user.photoURL*/
       );
-      myScores.points = myScores as double?;
+      myScores.value = _myScores;
     } catch (e) {
       AppLogger.e(e);
     }

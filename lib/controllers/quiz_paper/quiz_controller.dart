@@ -27,7 +27,7 @@ class QuizController extends GetxController {
   void onClose() {
     if (_timer != null) {
       _timer!.cancel();
-      Get.offAndToNamed(Resultcreen.routeName);
+      //Get.offAndToNamed(Resultcreen.routeName);
     }
     super.onClose();
   }

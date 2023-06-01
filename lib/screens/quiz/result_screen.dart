@@ -26,7 +26,7 @@ class Resultcreen extends GetView<QuizController> {
                   height: kToolbarHeight,
                 ),
                 titleWidget: Text(
-                  '${(controller.correctAnsweredQuestions)}',
+                  (controller.correctAnsweredQuestions),
                   style: kAppBarTS.copyWith(color: Colors.white),
                 ),
               ),
