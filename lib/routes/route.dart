@@ -1,4 +1,5 @@
 import 'package:cdss_quiz/controllers/controllers.dart';
+import 'package:cdss_quiz/controllers/profile/profile_controller.dart';
 import 'package:cdss_quiz/screens/home/custom_drawer.dart';
 import 'package:cdss_quiz/screens/screens.dart';
 import 'package:get/get.dart';
@@ -9,13 +10,20 @@ class AppRoutes {
           name: SplashScreen.routeName,
           page: () => const SplashScreen(),
         ),
+        GetPage(
+            page: () => const ProfileScreen(),
+            name: ProfileScreen.routeName,
+            binding: BindingsBuilder(() {
+              Get.put(QuizPaperController());
+              Get.put(ProfileController());
+            })),
         // GetPage(
         //   name: IntroScreen.routeName,
         //   page: () => IntroScreen(),
         // ),
         GetPage(
             name: HomeScreen.routeName,
-            page: () => const HomeScreen(),
+            page: () => HomeScreen(),
             binding: BindingsBuilder(() {
               Get.put(MyDrawerController());
               Get.put(QuizPaperController());

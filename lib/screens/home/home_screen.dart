@@ -11,6 +11,7 @@ class HomeScreen extends GetView<MyDrawerController> {
   const HomeScreen({Key? key}) : super(key: key);
 
   static const String routeName = '/home';
+  //final UserModel? user_;
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +70,7 @@ class HomeScreen extends GetView<MyDrawerController> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text("Hello,",
+                                        Text("Hello",
                                             style: kHomeHeader.copyWith(
                                                 color:
                                                     customOnHomeBackgroundColor(

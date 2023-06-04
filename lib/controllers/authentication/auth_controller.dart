@@ -24,12 +24,12 @@ class AuthController extends GetxController {
     _authStateChanges.listen((User? user) {
       _user.value = user;
     });
-    // if (_auth.currentUser == null) {
-    //   navigateToOnboarding();
-    // } else {
-    //   navigateToHome();
-    // }
-    navigateToOnboarding();
+    if (_auth.currentUser == null) {
+      navigateToOnboarding();
+    } else {
+      navigateToHome();
+    }
+    // navigateToOnboarding();
     //navigateToIntroduction();
   }
 
@@ -66,7 +66,8 @@ class AuthController extends GetxController {
     userFR.doc(account.email).set({
       "email": account.email,
       "name": account.displayName,
-      "profilepic": account.photoUrl
+      "profilepic": account.photoUrl,
+      //"totalScore": 0,
     });
   }
 
