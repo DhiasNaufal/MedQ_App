@@ -1,11 +1,19 @@
 import 'package:cdss_quiz/controllers/controllers.dart';
 import 'package:cdss_quiz/controllers/profile/profile_controller.dart';
+import 'package:cdss_quiz/screens/challenge/challenge_screen.dart';
 import 'package:cdss_quiz/screens/home/custom_drawer.dart';
 import 'package:cdss_quiz/screens/screens.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
   static List<GetPage> pages() => [
+        GetPage(
+            name: ChallengeScreen.routeName,
+            page: () => const ChallengeScreen(),
+            binding: BindingsBuilder(() {
+              // Get.put(MyDrawerController());
+              Get.put(QuizPaperController());
+            })),
         GetPage(
           name: SplashScreen.routeName,
           page: () => const SplashScreen(),
@@ -23,7 +31,7 @@ class AppRoutes {
         // ),
         GetPage(
             name: HomeScreen.routeName,
-            page: () => HomeScreen(),
+            page: () => const HomeScreen(),
             binding: BindingsBuilder(() {
               Get.put(MyDrawerController());
               Get.put(QuizPaperController());

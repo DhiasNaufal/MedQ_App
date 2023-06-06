@@ -25,5 +25,25 @@ DocumentReference questionsFR(
         {required String paperId, required String questionsId}) =>
     quizePaperFR.doc(paperId).collection('questions').doc(questionsId);
 
+// class PDFApi {
+//   static Future<File?> loadFirebase(String url) async {
+//     try {
+//       final refPDF = FirebaseStorage.instance.ref().child(url);
+//       final bytes = await refPDF.getData();
+
+//       return _storeFile(url, bytes!);
+//     } catch (e) {
+//       return null;
+//     }
+//   }
+//     static Future<File> _storeFile(String url, List<int> bytes) async {
+//     final filename = basename(url);
+//     final dir = await getApplicationDocumentsDirectory();
+
+//     final file = File('${dir.path}/$filename');
+//     await file.writeAsBytes(bytes, flush: true);
+//     return file;
+//   }
+// }
 //Reference get firebaseStorage => FirebaseStorage.instanceFor(bucket: 'gs://fire-base-chat-cc3e9.appspot.com').ref();
 //Reference get firebaseStorage => FirebaseStorage.instance.ref(); 

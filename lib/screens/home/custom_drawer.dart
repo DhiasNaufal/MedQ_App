@@ -1,4 +1,5 @@
 import 'package:cdss_quiz/configs/configs.dart';
+import 'package:cdss_quiz/screens/challenge/challenge_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cdss_quiz/controllers/common/drawer_controller.dart';
 import 'package:get/get.dart';
@@ -99,7 +100,9 @@ class CustomDrawer extends GetView<MyDrawerController> {
                   // ])),
                   const Spacer(flex: 1),
                   _DrawerButton(
-                      onPressed: () {}, //controller.github(),
+                      onPressed: () {
+                        Get.toNamed(ChallengeScreen.routeName);
+                      }, //controller.github(),
                       icon: AppIcons.github,
                       label: 'GitHub'),
                   _DrawerButton(
