@@ -22,14 +22,26 @@ class LeaderBoardScreen extends GetView<LeaderBoardController> {
 
   @override
   Widget build(BuildContext context) {
+    const tsStyle =
+        TextStyle(fontWeight: FontWeight.bold, color: kOnSecondaryColort);
     return Scaffold(
+      //backgroundColor: kOnSecondaryColort,
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(),
+      appBar: const CustomAppBar(
+        backColor: Colors.white,
+      ),
       bottomNavigationBar: Obx(() => controller.myScores.value == null
           ? const SizedBox()
           : LeaderBoardCard(
+              textColor: UIParameters.isDarkMode(context)
+                  ? Colors.white
+                  : primaryColorLT,
               data: controller.myScores.value!,
               index: -1,
+              style: TextStyle(
+                  color: UIParameters.isDesktop(context)
+                      ? Colors.white
+                      : kOnSecondaryColort),
             )),
       body: Center(
         child: BackgroundDecoration(
@@ -54,6 +66,8 @@ class LeaderBoardScreen extends GetView<LeaderBoardController> {
                         return LeaderBoardCard(
                           data: data,
                           index: index,
+                          textColor: kOnSecondaryColort,
+                          style: tsStyle,
                         );
                       },
                     ),
@@ -70,14 +84,17 @@ class LeaderBoardCard extends StatelessWidget {
     Key? key,
     required this.data,
     required this.index,
+    required this.textColor,
+    required this.style,
   }) : super(key: key);
 
   final LeaderBoardData data;
   final int index;
+  final Color textColor;
+  final TextStyle style;
 
   @override
   Widget build(BuildContext context) {
-    const tsStyle = TextStyle(fontWeight: FontWeight.bold);
     return ListTile(
       //tileColor: Colors.black,
       // leading: CircleAvatar(
@@ -85,8 +102,10 @@ class LeaderBoardCard extends StatelessWidget {
       //     ),
       title: Text(
         data.user.name,
-        style: const TextStyle(
-            color: Color(0xFF00164E), fontWeight: FontWeight.bold), //tsStyle
+        style: TextStyle(
+          color: textColor,
+          fontWeight: FontWeight.bold,
+        ), //tsStyle
       ),
       subtitle: EasySeparatedRow(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -103,7 +122,7 @@ class LeaderBoardCard extends StatelessWidget {
             ),
             text: Text(
               data.correctCount!,
-              style: tsStyle,
+              style: style,
             ),
           ),
           IconWithText(
@@ -113,7 +132,7 @@ class LeaderBoardCard extends StatelessWidget {
             ),
             text: Text(
               '${data.time!}',
-              style: tsStyle,
+              style: style,
             ),
           ),
           IconWithText(
@@ -123,7 +142,7 @@ class LeaderBoardCard extends StatelessWidget {
             ),
             text: Text(
               '${data.points!}',
-              style: tsStyle,
+              style: style,
             ),
           ),
         ],
@@ -132,7 +151,7 @@ class LeaderBoardCard extends StatelessWidget {
         visible: index != -1,
         child: Text(
           '#${'${index + 1}'.padLeft(2, "0")}',
-          style: tsStyle,
+          style: style,
         ),
       ),
     );

@@ -28,23 +28,7 @@ class MyApp extends StatelessWidget {
       theme: Get.find<ThemeController>().getLightheme(),
       darkTheme: Get.find<ThemeController>().getDarkTheme(),
       getPages: AppRoutes.pages(),
-      //debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
-
-// /*Initialized Firebase Function*/
-// Future<void> initFireBase() async {
-//   await Firebase.initializeApp(
-//     name: 'quizzle-demo',
-//     options: DefaultFirebaseOptions.currentPlatform,
-//   );
-// }
-
-// Future<void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-//   runApp(GetMaterialApp(
-//     home: DataUploaderScreen(),
-//   ));
-// }

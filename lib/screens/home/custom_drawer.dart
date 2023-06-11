@@ -70,7 +70,7 @@ class CustomDrawer extends GetView<MyDrawerController> {
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  color: tertiaryColorLT,
                                   borderRadius: BorderRadius.circular(10)),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -90,7 +90,12 @@ class CustomDrawer extends GetView<MyDrawerController> {
                                     SizedBox(
                                       width: 20,
                                     ),
-                                    Text(controller.user.value!.displayName!)
+                                    Text(
+                                      controller.user.value!.displayName!,
+                                      style: TextStyle(
+                                          color: tertiaryColorDT,
+                                          fontWeight: FontWeight.bold),
+                                    )
                                   ],
                                 ),
                               ),
@@ -103,6 +108,10 @@ class CustomDrawer extends GetView<MyDrawerController> {
                       onPressed: () {
                         Get.toNamed(ChallengeScreen.routeName);
                       }, //controller.github(),
+                      icon: Icons.assignment,
+                      label: 'Challenge'),
+                  _DrawerButton(
+                      onPressed: () {}, //controller.github(),
                       icon: AppIcons.github,
                       label: 'GitHub'),
                   _DrawerButton(

@@ -13,18 +13,16 @@ class Dialogs {
   static Widget quizStartDialog({required VoidCallback onTap}) {
     return AlertDialog(
       // title: const Text("Hi.."),
-      content: const Column(
+      content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Hi..",
-            style: TextStyle(
-                fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black),
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           Text(
             "Please login before start the quiz",
-            style: TextStyle(color: Colors.black),
           ),
         ],
       ),

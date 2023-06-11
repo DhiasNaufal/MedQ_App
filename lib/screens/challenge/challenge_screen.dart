@@ -22,6 +22,15 @@ class ChallengeScreen extends GetView<MyDrawerController> {
         child: SafeArea(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Center(
+                child: Text(
+              "Challenge",
+              style: kHeaderTS.copyWith(
+                  color: Theme.of(context).primaryColor, fontSize: 30),
+            )),
+            SizedBox(
+              height: 20,
+            ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 6),

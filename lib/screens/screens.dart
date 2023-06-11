@@ -1,6 +1,4 @@
 export 'home/home_screen.dart';
-export 'intro/splash_screen.dart';
-export 'upload/data_uploader_screen.dart';
 export 'authentication/login_screen.dart';
 export 'authentication/profile_screen.dart';
 export 'quiz/quiz_screen.dart';
@@ -9,3 +7,4 @@ export 'quiz/answer_check_screen.dart';
 export 'quiz/result_screen.dart';
 export 'leaderboard/leaderboard_screen.dart';
 export 'intro/onBoarding_screen.dart';
+export 'intro/splash_screen.dart';

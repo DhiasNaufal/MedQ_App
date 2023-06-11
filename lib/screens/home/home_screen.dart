@@ -115,30 +115,31 @@ class HomeScreen extends GetView<MyDrawerController> {
                             itemBuilder: (BuildContext context, int index) {
                               return GestureDetector(
                                   onTap: () {
-                                    subjectStatus[index] != false
-                                        ? Get.to(
-                                            () => SubjectScreen(index: index))
-                                        //subjectStatus[index+1] = true;
-                                        : null;
+                                    navigatoSubject(index: index);
+                                    // Get.to(() => SubjectScreen(index: index));
+                                    // subjectStatus[index] != false
+                                    //     ? Get.to(
+                                    //         () => SubjectScreen(index: index))
+                                    //     //subjectStatus[index+1] = true;
+                                    //     : null;
                                     //index? 2 :1
                                   },
-                                  child: subjectStatus[index] != false
-                                      ? Card(
-                                          child: Container(
-                                            child: Column(children: [
-                                              Image.asset(subjectImg[index]),
-                                              Text(subjectName[index])
-                                            ]),
-                                          ),
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                      //set border radius more than 50% of height and width to make circle
+                                    ),
+                                    child: Container(
+                                      padding: EdgeInsets.all(2),
+                                      child: Column(children: [
+                                        Image.asset(subjectImg[index]),
+                                        Text(
+                                          subjectName[index],
+                                          textAlign: TextAlign.center,
                                         )
-                                      : Card(
-                                          child: Container(
-                                            child: Column(children: [
-                                              Icon(Icons.lock),
-                                              Text("lol")
-                                            ]),
-                                          ),
-                                        ));
+                                      ]),
+                                    ),
+                                  ));
                             },
                             //   padding: const EdgeInsets.symmetric(
                             //       horizontal: 10, vertical: 20),
@@ -175,5 +176,23 @@ class HomeScreen extends GetView<MyDrawerController> {
         ),
       ),
     );
+  }
+}
+
+void navigatoSubject(
+    //Get.toNamed(QuizeScreen.routeName, arguments: paper);
+    {bool isTryAgain = false,
+    required int index}) {
+  AuthController authController = Get.find();
+
+  if (authController.isLogedIn()) {
+    if (isTryAgain) {
+      Get.back();
+      Get.to(() => SubjectScreen(index: index));
+    } else {
+      Get.to(() => SubjectScreen(index: index));
+    }
+  } else {
+    authController.showLoginAlertDialog();
   }
 }

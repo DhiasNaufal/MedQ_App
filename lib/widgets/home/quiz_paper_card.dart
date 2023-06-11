@@ -142,22 +142,27 @@ class QuizPaperCard extends GetView<QuizPaperController> {
                 Positioned(
                     bottom: -20.5,
                     right: -12,
-                    child: GestureDetector(
-                      behavior: HitTestBehavior.translucent,
-                      onTap: () {
-                        // Get.find<NotificationService>().showQuizCompletedNotification(id: 1, title: 'Sampole', body: 'Sample', imageUrl: model.imageUrl, payload: json.encode(model.toJson())  );
-                        Get.toNamed(LeaderBoardScreen.routeName,
-                            arguments: model);
-                      },
-                      child: Ink(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 15),
-                        decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(kCardBorderrRadius),
-                                bottomRight:
-                                    Radius.circular(kCardBorderrRadius)),
-                            color: kOnSecondaryColort),
+                    child: Ink(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 15),
+                      decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.5),
+                                spreadRadius: 0,
+                                blurRadius: 2.5,
+                                offset: const Offset(1, 2))
+                          ],
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(kCardBorderrRadius),
+                              bottomRight: Radius.circular(kCardBorderrRadius)),
+                          color: kOnSecondaryColort),
+                      child: GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onTap: () {
+                          Get.toNamed(LeaderBoardScreen.routeName,
+                              arguments: model);
+                        },
                         child: const Column(
                           children: [
                             Icon(
