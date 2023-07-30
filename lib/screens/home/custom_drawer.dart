@@ -1,5 +1,6 @@
 import 'package:cdss_quiz/configs/configs.dart';
 import 'package:cdss_quiz/screens/challenge/challenge_screen.dart';
+import 'package:cdss_quiz/screens/home/learning_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cdss_quiz/controllers/common/drawer_controller.dart';
 import 'package:get/get.dart';
@@ -111,9 +112,11 @@ class CustomDrawer extends GetView<MyDrawerController> {
                       icon: Icons.assignment,
                       label: 'Challenge'),
                   _DrawerButton(
-                      onPressed: () {}, //controller.github(),
-                      icon: AppIcons.github,
-                      label: 'GitHub'),
+                      onPressed: () {
+                        Get.toNamed(LearningScreen.routeName);
+                      }, //controller.github(),
+                      icon: Icons.book,
+                      label: 'Learning'),
                   _DrawerButton(
                     icon: Icons.code,
                     label: 'Source Code',

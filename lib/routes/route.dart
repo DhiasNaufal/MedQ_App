@@ -5,6 +5,8 @@ import 'package:cdss_quiz/screens/home/custom_drawer.dart';
 import 'package:cdss_quiz/screens/screens.dart';
 import 'package:get/get.dart';
 
+import '../screens/home/learning_screen.dart';
+
 class AppRoutes {
   static List<GetPage> pages() => [
         GetPage(
@@ -14,6 +16,14 @@ class AppRoutes {
               // Get.put(MyDrawerController());
               Get.put(QuizPaperController());
             })),
+        GetPage(
+          name: LearningScreen.routeName,
+          page: () => const LearningScreen(),
+        ),
+        // binding: BindingsBuilder(() {
+        //   // Get.put(MyDrawerController());
+        //   Get.put(QuizPaperController());
+        // })),
         GetPage(
           name: SplashScreen.routeName,
           page: () => const SplashScreen(),
